@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="pl" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blondiva - Peruki Krótki Bob Ombre Premium</title>
+    <meta name="description" content="Odkryj rewolucyjną perukę krótki bob od Blondiva. Najwyższy komfort, niewidoczne łączenie i zachwycający styl bez kleju i chemii.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#111111',
+                            card: '#1a1a1a',
+                            gold: '#ff9900',
+                            goldLight: '#ffb84d',
+                            accent: '#d4af37',
+                            darkGold: '#b87d00',
+                            grayLight: '#999999'
+                        }
+                    },
+                    fontFamily: {
+                        playfair: ['"Playfair Display"', 'serif'],
+                        jakarta: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 0 20px rgba(255, 153, 0, 0.15)',
+                        'gold-glow-strong': '0 0 30px rgba(255, 153, 0, 0.3)',
+                        'glass': '0 8px 32px 0 rgba(0, 0, 0, 0.37)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom global styles & Glassmorphism */
+        html, body {
+            background-color: #111111;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+        
+        .glass-card {
+            background: rgba(26, 26, 26, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-gold {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 153, 0, 0.3);
+        }
+
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #ff9900 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gold-btn-gradient {
+            background: linear-gradient(135deg, #ffb84d 0%, #ff9900 50%, #b87d00 100%);
+        }
+
+        /* Before/After Slider Styling */
+        .comparison-slider {
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        .image-before, .image-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .image-before img, .image-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            clip-path: inset(0 0 0 50%);
+            z-index: 2;
+        }
+
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: linear-gradient(to bottom, rgba(255,153,0,0.3), #ff9900, rgba(255,153,0,0.3));
+            cursor: ew-resize;
+            z-index: 10;
+            transform: translateX(-50%);
+        }
+
+        .slider-handle-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background: #111111;
+            border: 2px solid #ff9900;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(255, 153, 0, 0.5);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        .slider-handle:hover .slider-handle-circle,
+        .slider-handle:active .slider-handle-circle {
+            transform: translate(-50%, -50%) scale(1.1);
+            background-color: #1a1a1a;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111111;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #ff9900;
+        }
+        
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+
+        /* Floating Chat Button Styling */
+        @keyframes chat-pulse {
+            0% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 153, 0, 0.6);
+            }
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 18px rgba(255, 153, 0, 0);
+            }
+            100% {
+                transform: scale(0.95);
+                box-shadow: 0 0 0 0 rgba(255, 153, 0, 0);
+            }
+        }
+        .chat-floating-btn {
+            animation: chat-pulse 2s infinite ease-in-out;
+        }
+        .chat-tooltip {
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-card bg-brand-bg/85 border-b border-white/5 py-1.5 sm:py-4">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-1.5 sm:space-x-3 group">
+                <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/logo-4.jpg?v=1782291722" alt="Blondiva Logo" class="h-6 w-6 sm:h-10 sm:w-10 rounded-full border border-brand-gold/40 transition-transform duration-500 group-hover:rotate-12">
+                <span class="font-playfair text-sm sm:text-2xl font-bold tracking-wider sm:tracking-widest text-white transition-colors duration-300 group-hover:text-brand-gold">BLONDIVA</span>
+            </a>
+            
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wider text-gray-300">
+                <a href="#features" class="hover:text-brand-gold transition-colors duration-200">Zalety</a>
+                <a href="#transformation" class="hover:text-brand-gold transition-colors duration-200">Przed i Po</a>
+                <a href="#reviews" class="hover:text-brand-gold transition-colors duration-200">Opinie</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <a href="#form-consultation" class="gold-btn-gradient text-black font-extrabold text-[9px] sm:text-sm px-2.5 py-1.5 sm:px-5 sm:py-2.5 rounded-full hover:shadow-gold-glow hover:scale-105 transition-all duration-300 uppercase tracking-wider whitespace-nowrap">
+                    Zamów Teraz
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section (Section 1) -->
+    <section class="relative pt-20 pb-12 md:pt-36 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 overflow-hidden">
+        <!-- Background glows -->
+        <div class="absolute top-1/4 left-1/4 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-brand-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 right-10 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            
+            <!-- Left Column: Product Gallery -->
+            <div class="lg:col-span-5 space-y-6 flex flex-col justify-center">
+                <div class="relative group overflow-hidden rounded-[2rem] border border-white/10 shadow-glass bg-brand-card max-w-[430px] mx-auto w-full">
+                    <!-- Main image placeholder with transition -->
+                    <img id="main-product-img" src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_1.png?v=1782289965" alt="Peruka Miodowy Blond" class="w-full h-auto block transition-all duration-500 ease-in-out group-hover:scale-105">
+                    
+                    <!-- Top labels -->
+                    <span class="absolute top-4 left-4 bg-brand-gold text-black font-extrabold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider shadow-lg">
+                        100% Luksusowa Jakość
+                    </span>
+                    <span class="absolute top-4 right-4 bg-black/70 backdrop-blur-md text-white font-semibold text-xs px-3 py-1.5 rounded-full border border-white/10">
+                        Glueless Lace 13X3
+                    </span>
+                </div>
+
+                <!-- Thumbnail gallery -->
+                <div class="grid grid-cols-3 gap-2 sm:gap-4 max-w-[430px] mx-auto w-full">
+                    <div onclick="switchColor('honey', this)" class="thumbnail-btn cursor-pointer group relative overflow-hidden rounded-2xl border-2 border-brand-gold bg-brand-card aspect-square shadow-md transition-all duration-300">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_1.png?v=1782289965" alt="Miodowy Blond Miniaturka" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-300"></div>
+                        <span class="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-center bg-black/80 text-brand-gold rounded py-0.5 border border-brand-gold/30">Blond</span>
+                    </div>
+                    
+                    <div onclick="switchColor('platinum', this)" class="thumbnail-btn cursor-pointer group relative overflow-hidden rounded-2xl border border-white/10 bg-brand-card aspect-square shadow-md hover:border-brand-gold/50 transition-all duration-300">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_2.png?v=1782289965" alt="Platynowy Blond Miniaturka" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-300"></div>
+                        <span class="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-center bg-black/80 text-gray-300 rounded py-0.5 border border-white/10">Platyna</span>
+                    </div>
+                    
+                    <div onclick="switchColor('chestnut', this)" class="thumbnail-btn cursor-pointer group relative overflow-hidden rounded-2xl border border-white/10 bg-brand-card aspect-square shadow-md hover:border-brand-gold/50 transition-all duration-300">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_3_2.png?v=1782289965" alt="Szary Brąz Miniaturka" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors duration-300"></div>
+                        <span class="absolute bottom-2 left-2 right-2 text-[10px] font-bold text-center bg-black/80 text-gray-300 rounded py-0.5 border border-white/10">Brąz</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Purchase Info -->
+            <div class="lg:col-span-6 lg:col-start-7 lg:pl-4 space-y-8">
+                <div>
+                    <div class="flex items-center space-x-2 text-brand-gold font-bold text-xs uppercase tracking-widest mb-3">
+                        <span>Blondiva Luxury Hair</span>
+                        <span>•</span>
+                        <span>Kolekcja Premium 2026</span>
+                    </div>
+                    <h1 class="font-playfair text-2xl sm:text-4xl lg:text-5xl font-bold leading-tight text-white mb-4">
+                        Peruka Krótki Bob Ombre Blondiva
+                    </h1>
+                    <p class="text-brand-grayLight text-sm uppercase tracking-wide font-medium">Lace Front 13X3 • Miękkie Naturalne Włosy</p>
+                    
+                    <!-- Rating -->
+                    <div class="flex items-center space-x-2 mt-4">
+                        <div class="flex text-brand-gold">
+                            <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                        </div>
+                        <span class="text-sm text-gray-400 font-semibold">(4.9/5 na podstawie 182 opinii)</span>
+                    </div>
+                </div>
+
+                <!-- Price Widget Box -->
+                <div class="glass-card rounded-3xl p-4 sm:p-8 space-y-6 shadow-glass relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-brand-gold/5 rounded-full blur-xl"></div>
+                    
+                    <!-- Active Price Display -->
+                    <div class="flex flex-wrap items-baseline justify-between gap-4">
+                        <div>
+                            <span class="text-gray-400 text-xs block uppercase tracking-wider mb-1">Obliczona Cena Całkowita</span>
+                            <span id="display-price-total" class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">299,00 zł</span>
+                            <span id="display-price-unit" class="text-brand-gold font-bold text-sm block mt-1">299,00 zł / sztuka</span>
+                        </div>
+                        <div class="bg-brand-gold/10 border border-brand-gold/30 rounded-2xl px-4 py-2 text-right">
+                            <span class="text-brand-gold font-extrabold text-xs block uppercase tracking-wider">Oferta Specjalna</span>
+                            <span class="text-white font-extrabold text-lg">Rabat 30%</span>
+                        </div>
+                    </div>
+
+                    <div class="h-px bg-white/10"></div>
+
+                    <!-- Color Swatches Selection -->
+                    <div class="space-y-3">
+                        <span class="text-sm font-semibold uppercase tracking-wider text-gray-300 block">Wybierz Kolor:</span>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                            <!-- Honey Blonde -->
+                            <button onclick="switchColor('honey', null)" id="swatch-honey" class="color-swatch-btn glass-card-gold text-white font-semibold text-xs px-4 py-3.5 rounded-2xl flex items-center justify-between border-2 border-brand-gold transition-all duration-300 shadow-md">
+                                <span class="flex items-center space-x-2">
+                                    <span class="w-4.5 h-4.5 rounded-full bg-gradient-to-tr from-[#e5a93b] to-[#f9e4b7] border border-white/20 inline-block"></span>
+                                    <span>Miodowy Blond</span>
+                                </span>
+                                <span class="text-[10px] bg-brand-gold text-black font-extrabold px-1.5 py-0.5 rounded">Domyślny</span>
+                            </button>
+
+                            <!-- Platinum -->
+                            <button onclick="switchColor('platinum', null)" id="swatch-platinum" class="color-swatch-btn glass-card text-gray-300 hover:text-white font-semibold text-xs px-4 py-3.5 rounded-2xl flex items-center space-x-2 border border-white/10 hover:border-brand-gold/50 transition-all duration-300">
+                                <span class="w-4.5 h-4.5 rounded-full bg-gradient-to-tr from-[#d3d3d3] to-[#ffffff] border border-white/20 inline-block"></span>
+                                <span>Platyna</span>
+                            </button>
+
+                            <!-- Chestnut -->
+                            <button onclick="switchColor('chestnut', null)" id="swatch-chestnut" class="color-swatch-btn glass-card text-gray-300 hover:text-white font-semibold text-xs px-4 py-3.5 rounded-2xl flex items-center space-x-2 border border-white/10 hover:border-brand-gold/50 transition-all duration-300">
+                                <span class="w-4.5 h-4.5 rounded-full bg-gradient-to-tr from-[#8a5a36] to-[#d4af37] border border-white/20 inline-block"></span>
+                                <span>Cieniowany Brąz</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Quantity Counter -->
+                    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 pt-2">
+                        <div class="space-y-1.5">
+                            <span class="text-sm font-semibold uppercase tracking-wider text-gray-300 block">Ilość:</span>
+                            <div class="flex items-center space-x-1.5 bg-brand-bg rounded-2xl border border-white/10 p-1 w-fit">
+                                <button onclick="updateQty(-1)" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 text-white font-bold transition-all flex items-center justify-center text-lg">-</button>
+                                <input type="number" id="qty-input" value="1" min="1" max="1000" class="w-12 bg-transparent text-center font-bold text-white outline-none border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" readonly>
+                                <button onclick="updateQty(1)" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 text-white font-bold transition-all flex items-center justify-center text-lg">+</button>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <span id="shipping-status-badge" class="text-xs font-bold text-green-400 bg-green-950/30 border border-green-500/30 rounded-full px-3 py-1 inline-block">
+                                🚚 Darmowa Wysyłka
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="space-y-3 pt-2">
+                    <button onclick="handleHeroCTA()" class="w-full gold-btn-gradient text-black font-extrabold text-sm sm:text-base py-4 sm:py-5 rounded-2xl shadow-gold-glow hover:shadow-gold-glow-strong hover:scale-[1.02] active:scale-95 transition-all duration-300 uppercase tracking-widest">
+                        ZAMÓW TERAZ - OSZCZĘDZAJ
+                    </button>
+                    <p class="text-center text-xs text-gray-400 font-medium">
+                        🔒 Bezpieczna płatność przy odbiorze • Monitorowana wysyłka w 24/48h
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 3: Comprensione e Nodi di Dolore -->
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 relative overflow-hidden">
+        <div class="absolute top-1/3 left-10 w-72 h-72 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+            
+            <!-- Left Column: Premium Swiss Lace image -->
+            <div class="lg:col-span-5 relative group overflow-hidden rounded-[2rem] border border-white/10 shadow-glass bg-brand-card aspect-[4/5] sm:max-w-md mx-auto lg:max-w-none w-full">
+                <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/wig_lace_detail.jpg?v=1782289954" alt="Szczegóły koronki premium" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-transparent to-transparent flex flex-col justify-end p-6">
+                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-widest block mb-1">Ręcznie robiona Blondiva</span>
+                    <h3 class="font-playfair text-xl font-bold text-white leading-tight">Szczegóły niewidocznej szwajcarskiej siateczki (Lace)</h3>
+                </div>
+            </div>
+
+            <!-- Right Column: Pain Points & Solution -->
+            <div class="lg:col-span-7 space-y-8">
+                <div class="space-y-4">
+                    <span class="text-brand-gold font-bold text-xs uppercase tracking-widest block">Doskonale Cię Rozumiemy</span>
+                    <h2 class="font-playfair text-2xl sm:text-4xl md:text-5xl font-bold text-white leading-tight">Rozumiemy Twój Dyskomfort</h2>
+                    <div class="w-16 h-1 bg-brand-gold rounded-full"></div>
+                </div>
+
+                <!-- Pain points list -->
+                <div class="space-y-4">
+                    <!-- Pain point 1 -->
+                    <div class="flex items-start space-x-4 bg-brand-card/30 rounded-2xl p-5 border border-white/5 hover:border-brand-gold/20 transition-all duration-300">
+                        <div class="w-10 h-10 shrink-0 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-lg font-bold">
+                            <span>!</span>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-white font-bold text-base">Stres i Wypadanie Włosów</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                Przechodzisz przez trudny okres wypadania włosów spowodowany stresem, zmianami hormonalnymi, łysieniem lub skutkami ubocznymi leczenia medycznego, takiego jak chemioterapia?
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain point 2 -->
+                    <div class="flex items-start space-x-4 bg-brand-card/30 rounded-2xl p-5 border border-white/5 hover:border-brand-gold/20 transition-all duration-300">
+                        <div class="w-10 h-10 shrink-0 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-lg font-bold">
+                            <span>?</span>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-white font-bold text-base">Komfort i Lekkość</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                Pragniesz rozwiązania, które będzie nie tylko piękne, ale również niezwykle lekkie i delikatne dla skóry, zapewniając Ci pełen komfort?
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Pain point 3 -->
+                    <div class="flex items-start space-x-4 bg-brand-card/30 rounded-2xl p-5 border border-white/5 hover:border-brand-gold/20 transition-all duration-300">
+                        <div class="w-10 h-10 shrink-0 rounded-xl bg-brand-gold/10 flex items-center justify-center text-brand-gold text-lg font-bold">
+                            <span>✗</span>
+                        </div>
+                        <div class="space-y-1">
+                            <h3 class="text-white font-bold text-base">Podrażnienia i Ciepło</h3>
+                            <p class="text-xs text-gray-400 leading-relaxed">
+                                Czy próbowałaś już innych peruk dostępnych na rynku, ale okazały się one ciężkie, nienaturalne lub podrażniające skórę głowy?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solution Showcase -->
+                <div class="glass-card border border-brand-gold/30 rounded-[2rem] p-6 sm:p-8 shadow-glass relative overflow-hidden">
+                    <div class="absolute -top-12 -right-12 w-32 h-32 bg-brand-gold/10 rounded-full blur-2xl"></div>
+                    <div class="space-y-4 relative z-10">
+                        <div class="inline-block bg-brand-gold/10 border border-brand-gold/40 text-brand-gold font-extrabold text-[10px] px-3.5 py-1 rounded-full uppercase tracking-wider">
+                            Ostateczne Rozwiązanie
+                        </div>
+                        <h3 class="font-playfair text-xl sm:text-2xl font-bold text-white">Nasze Rozwiązanie Blondiva</h3>
+                        <p class="text-xs sm:text-sm text-gray-300 leading-relaxed">
+                            Zaprojektowana z myślą o najbardziej wrażliwej skórze głowy, peruka ta zapewnia naturalny wygląd bez użycia klejów i drażniących substancji chemicznych. To najbezpieczniejszy sposób na odzyskanie uśmiechu i pewności siebie każdego dnia.
+                        </p>
+                        <div class="pt-2">
+                            <a href="#form-consultation" onclick="scrollToForm()" class="inline-block gold-btn-gradient text-black font-extrabold text-xs px-6 py-3.5 rounded-full hover:shadow-gold-glow hover:scale-105 transition-all duration-300 uppercase tracking-widest">
+                                [ODKRYJ ROZWIĄZANIE BLONDIVA]
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Trasformazione Reale: Prima e Dopo -->
+    <section id="transformation" class="bg-brand-card/30 border-y border-white/5 py-12 sm:py-20 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-brand-gold font-bold text-xs uppercase tracking-widest block">Prezentacja Wizualna</span>
+                <h2 class="font-playfair text-2xl sm:text-4xl md:text-5xl font-bold text-white">Niezwykłe Rezultaty w Zaledwie 30 Sekund!</h2>
+                <div class="w-20 h-1 bg-brand-gold mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <!-- Look Selector for Slider -->
+            <div class="flex justify-center space-x-3 mb-4">
+                <button onclick="changeSliderLook(1, this)" class="slider-look-btn px-4 py-2 text-xs font-bold rounded-full border border-brand-gold bg-brand-gold/15 text-brand-gold transition-all duration-300 shadow-md">
+                    Modelka 1
+                </button>
+                <button onclick="changeSliderLook(2, this)" class="slider-look-btn px-4 py-2 text-xs font-bold rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300">
+                    Modelka 2
+                </button>
+                <button onclick="changeSliderLook(3, this)" class="slider-look-btn px-4 py-2 text-xs font-bold rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300">
+                    Modelka 3
+                </button>
+            </div>
+
+            <!-- 2-Column Layout on Desktop: Left: Slider | Right: Facebook Video Reel -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                
+                <!-- Left Column: Slider (7 columns) -->
+                <div class="lg:col-span-7">
+                    <!-- Comparison Slider Container -->
+                    <div class="relative overflow-hidden rounded-[32px] border border-white/10 shadow-glass bg-brand-card aspect-[4/3] sm:aspect-[16/10] w-full">
+                        <div class="comparison-slider w-full h-full" id="before-after-slider">
+                            <!-- Left Image (BEFORE - PRIMA) -->
+                            <div class="image-before">
+                                <img id="slider-before-img" src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/before_1.png?v=1782289966" alt="Włosy Przed" class="select-none pointer-events-none">
+                                <!-- Label Before -->
+                                <span class="absolute bottom-4 left-4 z-20 bg-black/70 backdrop-blur-md text-white font-extrabold text-xs px-4 py-2 rounded-xl border border-white/10 select-none">
+                                    PRZED
+                                </span>
+                            </div>
+                            
+                            <!-- Right Image (AFTER - DOPO) -->
+                            <div class="image-after" id="slider-after-container">
+                                <img id="slider-after-img" src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/after_1.png?v=1782289965" alt="Peruka Blondiva Po" class="select-none pointer-events-none">
+                                <!-- Label After -->
+                                <span class="absolute bottom-4 right-4 z-20 bg-brand-gold text-black font-extrabold text-xs px-4 py-2 rounded-xl shadow-lg select-none">
+                                    PO
+                                </span>
+                            </div>
+
+                            <!-- Draggable Handle Bar -->
+                            <div class="slider-handle" id="slider-handle">
+                                <div class="slider-handle-circle">
+                                    <!-- Left and Right Arrows -->
+                                    <svg class="w-5 h-5 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M8 9l-4 4 4 4m8 0l4-4-4-4"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: 9:16 Facebook Reels Video Player (5 columns) -->
+                <div class="lg:col-span-5 flex flex-col items-center justify-center space-y-4">
+                    <div class="text-center">
+                        <span class="text-brand-gold font-bold text-xs uppercase tracking-widest block mb-1">Zobacz Styl w Akcji</span>
+                        <h3 class="font-playfair text-xl font-bold text-white">Wideo Demo z Modelką</h3>
+                    </div>
+                    
+                    <!-- Smartphone Mockup Frame -->
+                    <div class="relative w-full max-w-[267px] aspect-[9/16] rounded-[2.2rem] border-[6px] border-[#222] shadow-gold-glow bg-black overflow-hidden group">
+                        <!-- Camera Notch -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-4 bg-black rounded-b-2xl z-30 flex items-center justify-center">
+                            <div class="w-3 h-3 rounded-full bg-white/10 border border-white/5"></div>
+                        </div>
+                        
+                        <!-- Facebook Reels Iframe Embed -->
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F2209035266540952%2F&show_text=false&width=267&t=0" 
+                                class="absolute inset-0 w-full h-full border-none overflow-hidden z-20" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                allowfullscreen="true" 
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Description & CTA -->
+            <div class="text-center space-y-6 pt-4">
+                <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed">
+                    Przeciągnij suwak, aby porównać efekt przed i po, lub obejrzyj wideo obok, aby zobaczyć naturalny ruch i lekkość peruki Blondiva!
+                </p>
+                <div class="pt-2">
+                    <a href="#form-consultation" onclick="scrollToForm()" class="inline-block gold-btn-gradient text-black font-extrabold text-sm px-8 py-4.5 rounded-2xl shadow-gold-glow hover:shadow-gold-glow-strong hover:scale-105 transition-all duration-300 uppercase tracking-widest">
+                        [CHCĘ TEN LOOK]
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 5: Caratteristiche Tecniche -->
+    <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 space-y-8 sm:space-y-16 relative overflow-hidden">
+        <div class="absolute bottom-1/4 left-10 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest block">Konstrukcja Peruki</span>
+            <h2 class="font-playfair text-2xl sm:text-4xl md:text-5xl font-bold text-white">Parametry Techniczne</h2>
+            <div class="w-20 h-1 bg-brand-gold mx-auto rounded-full mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Left Column: Specs 1 & 2 -->
+            <div class="lg:col-span-4 space-y-6">
+                <!-- Feature 1 -->
+                <div class="glass-card rounded-[2rem] p-6 border border-white/5 hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shadow-sm">
+                            <!-- Flame / Temp Icon -->
+                            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Włókno Syntetyczne Odporne na Wysokie Temperatury</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Ekskluzywne włókno syntetyczne premium od Blondiva, które doskonale imituje miękkość i naturalny blask prawdziwych włosów. Odporne na wysokie temperatury od 150°C do 180°C, co pozwala na prostowanie, kręcenie i stylizację według własnych upodobań.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card rounded-[2rem] p-6 border border-white/5 hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shadow-sm">
+                            <!-- Lace / Mesh Icon -->
+                            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12a3 3 0 11-6 0 3 3 0 016 0zm0 0c0 1.657 1.007 3 2.25 3S13.5 13.657 13.5 12 12.493 9 11.25 9 9 10.343 9 12zm0 0H3m18 0a3 3 0 11-6 0 3 3 0 016 0zm0 0c0 1.657-1.007 3-2.25 3S13.5 13.657 13.5 12 14.507 9 15.75 9 18 10.343 18 12zm0 0h-6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Elegancki Lace Front</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Niewidoczna technologia lace front z przodu tworzy naturalną i niezauważalną linię włosów, sprawiając wrażenie, jakby włosy rosły bezpośrednio ze skóry głowy.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Column: Glowing Cap Image -->
+            <div class="lg:col-span-4 relative group overflow-hidden rounded-[2rem] border border-brand-gold/35 shadow-gold-glow bg-brand-card aspect-[4/5] sm:max-w-xs mx-auto lg:max-w-none w-full">
+                <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/wig_cap_inside.jpg?v=1782289955" alt="Struktura wewnętrznej czepka" class="w-full h-full object-cover transition-transform duration-700 hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent flex flex-col justify-end p-6 text-center">
+                    <span class="text-brand-gold font-bold text-[10px] uppercase tracking-widest block mb-1">Technologia Glueless (Bez Kleju)</span>
+                    <h3 class="font-playfair text-lg font-bold text-white">Oddychający i Regulowany Czepek</h3>
+                </div>
+            </div>
+
+            <!-- Right Column: Specs 3 & 4 -->
+            <div class="lg:col-span-4 space-y-6">
+                <!-- Feature 3 -->
+                <div class="glass-card rounded-[2rem] p-6 border border-white/5 hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shadow-sm">
+                            <!-- Shield / Safe Icon -->
+                            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Regulowany Czepek Bez Użycia Kleju</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Regulowana i bezklejowa struktura wewnętrzna z elastycznymi paskami dopasowującymi się po obu stronach. Stabilnie przylega do każdego kształtu głowy bez potrzeby stosowania drażniących klejów chemicznych.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card rounded-[2rem] p-6 border border-white/5 hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 rounded-2xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/20 shadow-sm">
+                            <!-- Face / Sparkle Icon -->
+                            <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-base font-bold text-white">Dopasowana do Każdej Karnacji i Kształtu Twarzy</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Strzyżenie typu bob zaprojektowane tak, aby podkreślić każdy rys twarzy, wysmuklić kontury i idealnie współgrać z każdym odcieniem karnacji Polek.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Spedizione, Resi e Confezione (Trust Badges) -->
+    <section class="bg-brand-card/40 border-y border-white/5 py-12 sm:py-20 relative overflow-hidden">
+        <!-- Golden Radial Glow Behind -->
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-brand-gold/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-16 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-brand-gold font-bold text-xs uppercase tracking-widest block">Wysyłka i Gwarancje</span>
+                <h2 class="font-playfair text-2xl sm:text-4xl md:text-5xl font-bold text-white">Łatwa Polityka Wysyłki i Zwrotów</h2>
+                <div class="w-16 h-1 bg-brand-gold mx-auto rounded-full mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Badge 1 -->
+                <div class="glass-card-gold rounded-[2rem] p-8 flex flex-col justify-between border border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 flex items-center justify-center border border-brand-gold/25 shadow-sm text-3xl">
+                            <span>📦</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wider">Lekka jak Piórko - Tylko 200g</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Całkowita waga paczki to zaledwie 200g (sama peruka waży około 130g-150g). Miękka, lekka i oddychająca, do wygodnego noszenia przez cały dzień. Kompaktowe oryginalne pudełko (26x16x6 cm).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Badge 2 -->
+                <div class="glass-card rounded-[2rem] p-8 flex flex-col justify-between border border-white/5 hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 flex items-center justify-center border border-white/10 shadow-sm text-3xl">
+                            <span>🚚</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wider">Szybka i Bezpieczna Wysyłka</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Ekspresowa wysyłka z możliwością śledzenia. Sprawdź miękkość produktu przed zapłatą. Darmowa dostawa dla wszystkich zamówień.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Badge 3 -->
+                <div class="glass-card rounded-[2rem] p-8 flex flex-col justify-between border border-white/5 hover:border-brand-gold/30 hover:shadow-gold-glow transition-all duration-300">
+                    <div class="space-y-4">
+                        <div class="w-14 h-14 rounded-2xl bg-brand-gold/10 flex items-center justify-center border border-white/10 shadow-sm text-3xl">
+                            <span>🔄</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white uppercase tracking-wider">Łatwy Zwrot w 14 Dni</h3>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            Gwarancja satysfakcji. Wsparcie w zakresie łatwej i elastycznej polityki zwrotów w ciągu 14 dni w przypadku wad fabrycznych (produkt musi posiadać oryginalną metkę).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Button 5 -->
+            <div class="text-center pt-4">
+                <a href="#form-consultation" onclick="scrollToForm()" class="inline-block gold-btn-gradient text-black font-extrabold text-sm sm:text-base px-8 py-4.5 rounded-2xl shadow-gold-glow hover:shadow-gold-glow-strong hover:scale-105 transition-all duration-300 uppercase tracking-widest">
+                    [SKORZYSTAJ Z OFERTY]
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Section 6.2: Lookbook Gallery -->
+    <section id="gallery" class="bg-brand-card/20 border-t border-white/5 py-12 sm:py-20 relative overflow-hidden">
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-brand-gold/5 rounded-full blur-[120px] pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 relative z-10">
+            
+            <div class="text-center max-w-3xl mx-auto space-y-4">
+                <span class="text-brand-gold font-bold text-xs uppercase tracking-widest block">Galeria Stylu</span>
+                <h2 class="font-playfair text-2xl sm:text-4xl md:text-5xl font-bold text-white">Nasze Peruki w Realnych Stylizacjach</h2>
+                <div class="w-20 h-1 bg-brand-gold mx-auto rounded-full mt-4"></div>
+                <p class="text-sm sm:text-base text-gray-300 max-w-xl mx-auto leading-relaxed pt-2">
+                    Zobacz, jak naturalnie i zjawiskowo prezentują się peruki Blondiva na modelkach. Odkryj wyjątkową objętość, perfekcyjne cięcie i blask, który przywraca pewność siebie.
+                </p>
+            </div>
+
+            <!-- Gallery Horizontal Slider -->
+            <div class="relative px-2 sm:px-0">
+                <!-- Left navigation button -->
+                <button onclick="scrollGallery(-1)" class="absolute left-1 sm:-left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-bg/80 border border-brand-gold/30 hover:border-brand-gold text-brand-gold flex items-center justify-center shadow-gold-glow hover:scale-110 active:scale-95 transition-all duration-300 backdrop-blur-md">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+
+                <!-- Horizontal scroll viewport -->
+                <div id="gallery-slider-container" class="overflow-x-auto scroll-smooth snap-x snap-mandatory flex gap-6 pb-6 no-scrollbar">
+                    <!-- Card 1 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/3.jpg?v=1782292864" alt="Stylizacja Blondiva 1" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Perfekcyjny Wygląd</span>
+                            <p class="text-xs text-white/80 mt-1">Naturalny blask i lekkość każdego dnia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/1.jpg?v=1782292864" alt="Stylizacja Blondiva 2" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Zjawiskowy Bob</span>
+                            <p class="text-xs text-white/80 mt-1">Klasyczne cięcie z nowoczesnym cieniowaniem.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/4.png?v=1782292867" alt="Stylizacja Blondiva 3" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Niewidoczna Siateczka</span>
+                            <p class="text-xs text-white/80 mt-1">Niezrównany komfort i naturalna linia czoła.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/6.png?v=1782292867" alt="Stylizacja Blondiva 4" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Miodowy Blond</span>
+                            <p class="text-xs text-white/80 mt-1">Ciepły, promienny kolor pasujący do każdej karnacji.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 5 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/9.png?v=1782292867" alt="Stylizacja Blondiva 5" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Platynowy Blask</span>
+                            <p class="text-xs text-white/80 mt-1">Wyrazisty styl, który przyciąga spojrzenia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 6 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/7.png?v=1782292868" alt="Stylizacja Blondiva 6" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Głęboki Brąz</span>
+                            <p class="text-xs text-white/80 mt-1">Klasyczna, elegancka i stonowana stylizacja.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 7 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/2.png?v=1782292868" alt="Stylizacja Blondiva 7" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Łatwa Regulacja</span>
+                            <p class="text-xs text-white/80 mt-1">Perfekcyjne dopasowanie do kształtu głowy.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 8 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/5.png?v=1782292868" alt="Stylizacja Blondiva 8" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Naturalny Ruch</span>
+                            <p class="text-xs text-white/80 mt-1">Włosy poruszają się naturalnie przy każdym kroku.</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 9 -->
+                    <div class="snap-start shrink-0 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.3333%-16px)] group relative overflow-hidden rounded-[2rem] border border-white/10 bg-brand-card shadow-glass aspect-[4/5] transition-all duration-300 hover:border-brand-gold/30 hover:shadow-gold-glow">
+                        <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/8.png?v=1782292868" alt="Stylizacja Blondiva 9" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest">Pewność Siebie</span>
+                            <p class="text-xs text-white/80 mt-1">Poczuj się piękna i wyjątkowa każdego dnia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right navigation button -->
+                <button onclick="scrollGallery(1)" class="absolute right-1 sm:-right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-brand-bg/80 border border-brand-gold/30 hover:border-brand-gold text-brand-gold flex items-center justify-center shadow-gold-glow hover:scale-110 active:scale-95 transition-all duration-300 backdrop-blur-md">
+                    <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Section 6.5: Recensioni dei Clienti -->
+    <section id="reviews" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-20 lg:py-24 space-y-8 sm:space-y-16 overflow-hidden">
+        <div class="text-center max-w-3xl mx-auto space-y-4">
+            <span class="text-brand-gold font-bold text-xs uppercase tracking-widest block">Prawdziwe Doświadczenia</span>
+            <h2 class="font-playfair text-2xl sm:text-4xl md:text-5xl font-bold text-white">Co Mówią Osoby, Które Wybrały Blondiva</h2>
+            <div class="w-20 h-1 bg-brand-gold mx-auto rounded-full mt-4"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Review 1 -->
+            <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between border border-white/5 relative shadow-glass transition-all duration-300 hover:border-brand-gold/30">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold text-sm">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="text-sm text-gray-300 italic leading-relaxed">
+                        "Zamówiłam partię 30 sztuk w odcieniu Miodowy Blond do mojego sklepu. Moje klientki oszalały na ich punkcie! Włókno jest niesamowicie miękkie, a siateczka z przodu (lace front) niewidoczna. Paczka dotarła kompaktowa, każda peruka waży bardzo mało (około 200g z pudełkiem) i pasuje idealnie bez użycia kleju. Doskonała marża!"
+                    </p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/5 flex items-center justify-between">
+                    <div>
+                        <span class="text-white font-extrabold text-sm block">Elena R.</span>
+                        <span class="text-xs text-brand-gold font-semibold">Warszawa • Sklep / Salon</span>
+                    </div>
+                    <span class="text-xs bg-brand-gold/10 border border-brand-gold/30 text-brand-gold px-2.5 py-1 rounded-full font-bold">Nabywca Hurtowy</span>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between border border-white/5 relative shadow-glass transition-all duration-300 hover:border-brand-gold/30 scale-100 lg:scale-105 border-brand-gold/20">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold text-sm">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="text-sm text-gray-300 italic leading-relaxed">
+                        "Z powodu stresu borykałam się z silnym przerzedzeniem włosów i straciłam pewność siebie. Ta peruka bob od Blondiva (wybrałam Szary Brąz) przywróciła mi uśmiech w 30 sekund. Jest niezwykle lekka, oddychająca i nie podrażnia mojej wrażliwej skóry. Nikt nie zauważa, że to peruka!"
+                    </p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/5 flex items-center justify-between">
+                    <div>
+                        <span class="text-white font-extrabold text-sm block">Sofia M.</span>
+                        <span class="text-xs text-brand-gold font-semibold">Kraków • Prywatnie</span>
+                    </div>
+                    <span class="text-xs bg-brand-gold/10 border border-brand-gold/30 text-brand-gold px-2.5 py-1 rounded-full font-bold">Klient Detaliczny</span>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="glass-card rounded-[32px] p-8 flex flex-col justify-between border border-white/5 relative shadow-glass transition-all duration-300 hover:border-brand-gold/30">
+                <div class="space-y-4">
+                    <div class="flex text-brand-gold text-sm">
+                        <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                    </div>
+                    <p class="text-sm text-gray-300 italic leading-relaxed">
+                        "Uwielbiam cięcie typu Bob i chciałam wypróbować Platynowe Ombre bez konieczności rozjaśniania i niszczenia własnych włosów. Peruka jest fantastyczna, odporna na temperaturę prostownicy i bardzo łatwa w regulacji dzięki wewnętrznym paskom. Bardzo szybka wysyłka!"
+                    </p>
+                </div>
+                <div class="mt-6 pt-6 border-t border-white/5 flex items-center justify-between">
+                    <div>
+                        <span class="text-white font-extrabold text-sm block">Giulia B.</span>
+                        <span class="text-xs text-brand-gold font-semibold">Gdańsk • Moda i Styl</span>
+                    </div>
+                    <span class="text-xs bg-brand-gold/10 border border-brand-gold/30 text-brand-gold px-2.5 py-1 rounded-full font-bold">Klient Detaliczny</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Modulo d'Ordine -->
+    <section id="form-consultation" class="bg-brand-card/30 border-y border-white/5 py-12 sm:py-20 lg:py-24 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-gold/5 rounded-full blur-[140px] pointer-events-none"></div>
+
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-card rounded-[36px] p-5 sm:p-12 border-2 border-white/10 shadow-glass space-y-6 sm:space-y-8 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full blur-2xl"></div>
+
+                <div class="text-center space-y-3">
+                    <div class="inline-flex items-center space-x-2 bg-brand-gold/15 border border-brand-gold/30 text-brand-gold text-[10px] font-extrabold px-3 py-1 rounded-full uppercase tracking-widest">
+                        ⚡ Odpowiedź w 15 Minut
+                    </div>
+                    <h2 class="font-playfair text-xl sm:text-3xl font-extrabold text-white leading-tight uppercase">
+                        OTRZYMAJ BEZPŁATNĄ KONSULTACJĘ OD BLONDIVA W 15 MINUT
+                    </h2>
+                    <p class="text-xs sm:text-sm text-gray-300 leading-relaxed max-w-xl mx-auto">
+                        Zostaw swoje dane, a nasz zespół skontaktuje się z Tobą natychmiast, aby pomóc Ci w wyborze i zablokować promocyjną cenę hurtową!
+                    </p>
+                </div>
+
+                <div class="h-px bg-white/10"></div>
+
+                <!-- Submission Form -->
+                <form id="consultation-form" onsubmit="submitForm(event)" class="space-y-6">
+                    
+                    <!-- Full Name -->
+                    <div class="space-y-2">
+                        <label for="full-name" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                            Imię i Nazwisko <span class="text-brand-gold">*</span>
+                        </label>
+                        <input type="text" id="full-name" required placeholder="Wpisz swoje pełne imię i nazwisko" class="w-full bg-brand-bg/85 border border-white/10 focus:border-brand-gold/50 rounded-2xl px-5 py-4 text-white text-sm font-semibold outline-none transition-all duration-300">
+                    </div>
+
+                    <!-- Phone Number -->
+                    <div class="space-y-2">
+                        <label for="phone-number" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                            Numer Telefonu / WhatsApp <span class="text-brand-gold">*</span>
+                        </label>
+                        <input type="tel" id="phone-number" required placeholder="Np. +48 500 123 456" class="w-full bg-brand-bg/85 border border-white/10 focus:border-brand-gold/50 rounded-2xl px-5 py-4 text-white text-sm font-semibold outline-none transition-all duration-300">
+                    </div>
+                    <!-- Address -->
+                    <div class="space-y-2">
+                        <label for="delivery-address" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                            Adres dostawy <span class="text-brand-gold">*</span>
+                        </label>
+                        <input type="text" id="delivery-address" required placeholder="Wpisz swój pełny adres (ulica, nr domu, kod pocztowy, miasto)" class="w-full bg-brand-bg/85 border border-white/10 focus:border-brand-gold/50 rounded-2xl px-5 py-4 text-white text-sm font-semibold outline-none transition-all duration-300">
+                    </div>
+
+                    <!-- Model Choice Checkboxes -->
+                    <div class="space-y-3">
+                        <span class="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                            Wybierz model, o który chcesz zapytać:
+                        </span>
+                        
+                        <div class="space-y-3">
+                            <!-- Model 1 -->
+                            <label class="flex items-center space-x-3.5 bg-brand-bg/50 border border-white/10 p-4.5 rounded-2xl cursor-pointer hover:border-brand-gold/40 hover:bg-brand-bg/80 transition-all duration-200 select-none">
+                                <input type="radio" name="model-choice" value="honey" checked class="w-5 h-5 text-brand-gold border-white/20 focus:ring-0 focus:ring-offset-0 bg-transparent rounded-full checked:bg-brand-gold checked:border-brand-gold">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-4 h-4 rounded-full bg-[#e5a93b]"></span>
+                                    <div>
+                                        <span class="text-sm font-bold text-white block">Miodowy Blond</span>
+                                        <span class="text-[11px] text-gray-400 block mt-0.5">Kolor Miodowy Blond Ombre - Długość: 38cm</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Model 2 -->
+                            <label class="flex items-center space-x-3.5 bg-brand-bg/50 border border-white/10 p-4.5 rounded-2xl cursor-pointer hover:border-brand-gold/40 hover:bg-brand-bg/80 transition-all duration-200 select-none">
+                                <input type="radio" name="model-choice" value="platinum" class="w-5 h-5 text-brand-gold border-white/20 focus:ring-0 focus:ring-offset-0 bg-transparent rounded-full checked:bg-brand-gold checked:border-brand-gold">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-4 h-4 rounded-full bg-[#d3d3d3]"></span>
+                                    <div>
+                                        <span class="text-sm font-bold text-white block">Platyna</span>
+                                        <span class="text-[11px] text-gray-400 block mt-0.5">Kolor Platynowe Ombre - Długość: 38cm</span>
+                                    </div>
+                                </div>
+                            </label>
+
+                            <!-- Model 3 -->
+                            <label class="flex items-center space-x-3.5 bg-brand-bg/50 border border-white/10 p-4.5 rounded-2xl cursor-pointer hover:border-brand-gold/40 hover:bg-brand-bg/80 transition-all duration-200 select-none">
+                                <input type="radio" name="model-choice" value="chestnut" class="w-5 h-5 text-brand-gold border-white/20 focus:ring-0 focus:ring-offset-0 bg-transparent rounded-full checked:bg-brand-gold checked:border-brand-gold">
+                                <div class="flex items-center space-x-3">
+                                    <span class="w-4 h-4 rounded-full bg-[#8a5a36]"></span>
+                                    <div>
+                                        <span class="text-sm font-bold text-white block">Szary Brąz</span>
+                                        <span class="text-[11px] text-gray-400 block mt-0.5">Kolor Brąz Cieniowany Pasemka - Długość: 33cm</span>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Form Quantity Selector -->
+                    <div class="space-y-2">
+                        <label for="form-qty-input" class="block text-xs font-bold uppercase tracking-wider text-gray-300">
+                            Ilość <span class="text-brand-gold">*</span>
+                        </label>
+                        <div class="flex items-center space-x-1.5 bg-brand-bg rounded-2xl border border-white/10 p-1 w-fit">
+                            <button type="button" onclick="updateQtyForm(-1)" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 text-white font-bold transition-all flex items-center justify-center text-lg">-</button>
+                            <input type="number" id="form-qty-input" value="1" min="1" max="1000" class="w-12 bg-transparent text-center font-bold text-white outline-none border-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" readonly>
+                            <button type="button" onclick="updateQtyForm(1)" class="w-10 h-10 rounded-xl bg-white/5 hover:bg-white/10 active:scale-95 text-white font-bold transition-all flex items-center justify-center text-lg">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Hidden/Display Info showing quantity selection -->
+                    <div id="form-summary-box" class="bg-brand-gold/5 border border-brand-gold/20 rounded-2xl p-4 flex items-center justify-between text-xs sm:text-sm text-gray-300">
+                        <span>Wybrana Ilość: <strong id="form-summary-qty" class="text-white text-sm font-bold">1 Sztuka</strong></span>
+                        <span>Szacowana Cena Jednostkowa: <strong id="form-summary-unit-price" class="text-brand-gold text-sm font-bold">299,00 zł</strong></span>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <button type="submit" class="w-full gold-btn-gradient text-black font-extrabold text-base py-5 rounded-2xl shadow-gold-glow hover:shadow-gold-glow-strong hover:scale-[1.02] active:scale-95 transition-all duration-300 uppercase tracking-widest">
+                            POPROŚ O KONSULTACJĘ TERAZ
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-950 border-t border-white/5 py-12 text-center text-xs text-gray-500 font-medium space-y-4">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center space-x-3">
+                <img src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/logo-4.jpg?v=1782291722" alt="Blondiva Logo" class="h-8 w-8 rounded-full border border-brand-gold/30">
+                <span class="font-playfair text-lg font-bold tracking-widest text-white">BLONDIVA</span>
+            </div>
+            <div class="text-gray-400">
+                © 2026 Blondiva Wigs. Wszelkie prawa zastrzeżone.
+            </div>
+            <div class="flex space-x-6 text-gray-400">
+                <a href="#" class="hover:text-brand-gold transition-colors">Polityka Prywatności</a>
+                <span>•</span>
+                <a href="#" class="hover:text-brand-gold transition-colors">Regulamin Usługi</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal Popup -->
+    <div id="success-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/85 backdrop-blur-md hidden transition-opacity duration-300 opacity-0">
+        <div class="glass-card rounded-[32px] border border-brand-gold/40 p-8 sm:p-10 max-w-md w-full mx-4 text-center space-y-6 shadow-gold-glow-strong scale-95 transition-transform duration-300">
+            <div class="w-16 h-16 rounded-full bg-brand-gold/20 flex items-center justify-center text-brand-gold text-3xl mx-auto border border-brand-gold/30">
+                ✓
+            </div>
+            <h3 class="font-playfair text-2xl font-bold text-white uppercase tracking-wide">
+                Zgłoszenie Odebrane!
+            </h3>
+            <p class="text-sm text-gray-300 leading-relaxed">
+                Dziękujemy <strong id="modal-user-name" class="text-white"></strong>. Twoje zgłoszenie dotyczące peruki <strong id="modal-model-name" class="text-brand-gold"></strong> (Ilość: <strong id="modal-qty" class="text-white"></strong>) zostało pomyślnie zarejestrowane. Konsultant z Blondiva skontaktuje się z Tobą telefonicznie lub przez WhatsApp w ciągu 15 minut!
+            </p>
+            <div class="pt-2">
+                <button onclick="closeModal()" class="w-full gold-btn-gradient text-black font-extrabold text-sm py-4 rounded-xl shadow-md transition-all hover:scale-105">
+                    ZAMKNIJ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live Order Toast Notification Pop-up -->
+    <div id="live-order-toast" class="fixed bottom-4 left-4 right-4 md:left-6 md:right-auto md:bottom-6 z-50 w-auto md:w-full md:max-w-sm bg-brand-card/95 backdrop-blur-md border border-brand-gold/30 rounded-2xl p-3 sm:p-4 shadow-gold-glow flex items-center space-x-3 sm:space-x-3.5 transform translate-y-28 opacity-0 pointer-events-none transition-all duration-500">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 shrink-0 rounded-xl overflow-hidden border border-brand-gold/20">
+            <img id="toast-product-img" src="https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_1.png?v=1782289965" alt="Prodotto" class="w-full h-full object-cover">
+        </div>
+        <div class="flex-1 space-y-0.5 sm:space-y-1">
+            <p class="text-[10px] sm:text-xs text-brand-gold font-extrabold uppercase tracking-wider">Ostatnie Zamówienie</p>
+            <p id="toast-message" class="text-[11px] sm:text-xs text-white font-semibold leading-relaxed">
+                Elena R. z Warszawy właśnie zamówiła...
+            </p>
+            <p id="toast-time" class="text-[9px] sm:text-[10px] text-gray-400 font-medium">1 minutę temu</p>
+        </div>
+        <button onclick="hideOrderToast()" class="text-gray-500 hover:text-white font-bold text-xs select-none p-1">✕</button>
+    </div>
+
+    <!-- Floating Messenger Chat Button -->
+    <a href="https://m.me/61591172523558" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center chat-floating-container" id="messenger-chat-widget">
+        <!-- Text Tooltip -->
+        <span class="mr-3 bg-brand-card/95 text-white text-xs font-bold px-4.5 py-2.5 rounded-2xl border border-brand-gold/30 shadow-glass pointer-events-none whitespace-nowrap backdrop-blur-md chat-tooltip">
+            Napisz do nas!
+        </span>
+        <!-- Floating Button Circle -->
+        <div class="w-14 h-14 rounded-full gold-btn-gradient flex items-center justify-center shadow-lg cursor-pointer chat-floating-btn relative border border-brand-gold/30">
+            <!-- Messenger SVG Icon -->
+            <svg class="w-7 h-7 text-black" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.36 2 2 6.13 2 11.43c0 2.99 1.44 5.66 3.73 7.42.19.15.3.38.3.62l.02 2.05c.01.53.53.91 1.02.72l2.36-.93c.17-.07.36-.07.52-.01C10.74 21.6 11.37 21.7 12 21.7c5.64 0 10-4.13 10-9.43S17.64 2 12 2zm1.09 12.35l-2.03-2.17-3.95 2.17c-.39.22-.85-.24-.63-.63l2.03-2.17 2.03 2.17 3.95-2.17c.39-.22.85.24.63.63l-2.03 2.17z"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Vanilla JavaScript -->
+    <script>
+        // Data model state
+        const state = {
+            selectedColor: 'honey', // honey, platinum, chestnut
+            quantity: 1,
+            sliderActiveLook: 1
+        };
+
+        // Flat Price config (PLN)
+        const productPrice = 299;
+
+        // Image mappings
+        const images = {
+            honey: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_1.png?v=1782289965',
+            platinum: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_2.png?v=1782289965',
+            chestnut: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_3_2.png?v=1782289965'
+        };
+
+        const sliderLooks = {
+            1: { before: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/before_1.png?v=1782289966', after: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/after_1.png?v=1782289965' },
+            2: { before: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/before_2.png?v=1782289966', after: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/after_2.png?v=1782289965' },
+            3: { before: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/before_3.png?v=1782289963', after: 'https://cdn.shopify.com/s/files/1/0827/5053/7942/files/after_3.png?v=1782289964' }
+        };
+
+        // DOM elements cache
+        const mainProductImg = document.getElementById('main-product-img');
+        const qtyInput = document.getElementById('qty-input');
+        const displayPriceTotal = document.getElementById('display-price-total');
+        const displayPriceUnit = document.getElementById('display-price-unit');
+        const activeSavingsPercent = document.getElementById('active-savings-percent');
+        const shippingStatusBadge = document.getElementById('shipping-status-badge');
+        
+        const formSummaryQty = document.getElementById('form-summary-qty');
+        const formSummaryUnitPrice = document.getElementById('form-summary-unit-price');
+        
+        // Colors & Gallery Logic
+        function switchColor(colorKey, buttonElement) {
+            state.selectedColor = colorKey;
+
+            // Update main image with fade effect
+            mainProductImg.style.opacity = '0.3';
+            setTimeout(() => {
+                mainProductImg.src = encodeURI(images[colorKey]);
+                mainProductImg.alt = `Peruka Blondiva - ${colorKey}`;
+                mainProductImg.style.opacity = '1';
+            }, 150);
+
+            // Update color swatch UI states
+            document.querySelectorAll('.color-swatch-btn').forEach(btn => {
+                btn.className = "color-swatch-btn glass-card text-gray-300 hover:text-white font-semibold text-xs px-4 py-3.5 rounded-2xl flex items-center space-x-2 border border-white/10 hover:border-brand-gold/50 transition-all duration-300";
+            });
+
+            const activeSwatch = document.getElementById(`swatch-${colorKey}`);
+            if (activeSwatch) {
+                if (colorKey === 'honey') {
+                    activeSwatch.className = "color-swatch-btn glass-card-gold text-white font-semibold text-xs px-4 py-3.5 rounded-2xl flex items-center justify-between border-2 border-brand-gold transition-all duration-300 shadow-md";
+                } else {
+                    activeSwatch.className = "color-swatch-btn glass-card-gold text-white font-semibold text-xs px-4 py-3.5 rounded-2xl flex items-center space-x-2 border-2 border-brand-gold transition-all duration-300 shadow-md";
+                }
+            }
+
+            // Update thumbnails highlight
+            document.querySelectorAll('.thumbnail-btn').forEach(thumb => {
+                thumb.className = "thumbnail-btn cursor-pointer group relative overflow-hidden rounded-2xl border border-white/10 bg-brand-card aspect-square shadow-md hover:border-brand-gold/50 transition-all duration-300";
+            });
+
+            // If triggered by thumbnail, highlight it
+            if (buttonElement) {
+                buttonElement.className = "thumbnail-btn cursor-pointer group relative overflow-hidden rounded-2xl border-2 border-brand-gold bg-brand-card aspect-square shadow-md transition-all duration-300";
+            } else {
+                // Find matching thumbnail button index and highlight it
+                const index = colorKey === 'honey' ? 0 : (colorKey === 'platinum' ? 1 : 2);
+                const thumbs = document.querySelectorAll('.thumbnail-btn');
+                if (thumbs[index]) {
+                    thumbs[index].className = "thumbnail-btn cursor-pointer group relative overflow-hidden rounded-2xl border-2 border-brand-gold bg-brand-card aspect-square shadow-md transition-all duration-300";
+                }
+            }
+
+            // Sync with bottom order form
+            const formRadio = document.querySelector(`input[name="model-choice"][value="${colorKey}"]`);
+            if (formRadio) {
+                formRadio.checked = true;
+            }
+
+            updatePriceDisplay();
+        }
+
+        // Quantity Logic
+        function updateQty(change) {
+            let newVal = state.quantity + change;
+            if (newVal < 1) newVal = 1;
+            if (newVal > 1000) newVal = 1000;
+            state.quantity = newVal;
+            qtyInput.value = newVal;
+            
+            const formQtyInput = document.getElementById('form-qty-input');
+            if (formQtyInput) formQtyInput.value = newVal;
+            
+            updatePriceDisplay();
+        }
+
+        // Color Swatches Selection in form
+        function updateQtyForm(change) {
+            let newVal = state.quantity + change;
+            if (newVal < 1) newVal = 1;
+            if (newVal > 1000) newVal = 1000;
+            state.quantity = newVal;
+            
+            qtyInput.value = newVal;
+            const formQtyInput = document.getElementById('form-qty-input');
+            if (formQtyInput) formQtyInput.value = newVal;
+            
+            updatePriceDisplay();
+        }
+
+        function updatePriceDisplay() {
+            const currentQty = state.quantity;
+            const unitPrice = productPrice;
+            const totalPrice = unitPrice * currentQty;
+
+            // Format as currency (PLN - zł)
+            const formatter = new Intl.NumberFormat('pl-PL', {
+                style: 'currency',
+                currency: 'PLN',
+                minimumFractionDigits: 2
+            });
+
+            const formattedUnit = formatter.format(unitPrice);
+            const formattedTotal = formatter.format(totalPrice);
+
+            // Update DOM
+            displayPriceTotal.textContent = formattedTotal;
+            displayPriceUnit.textContent = `${formattedUnit} / sztuka`;
+
+            // Shipping status
+            shippingStatusBadge.textContent = "🚚 Darmowa Wysyłka";
+            shippingStatusBadge.className = "text-xs font-bold text-green-400 bg-green-950/30 border border-green-500/30 rounded-full px-3 py-1 inline-block";
+
+            // Sync with bottom order form summary
+            let qtyText = 'Sztuk';
+            if (currentQty === 1) qtyText = 'Sztuka';
+            else if (currentQty >= 2 && currentQty <= 4) qtyText = 'Sztuki';
+            formSummaryQty.textContent = `${currentQty} ${qtyText}`;
+            formSummaryUnitPrice.textContent = formattedUnit;
+
+            const formQtyInput = document.getElementById('form-qty-input');
+            if (formQtyInput) {
+                formQtyInput.value = currentQty;
+            }
+        }
+
+        // Scroll helper
+        function scrollToForm() {
+            const formSection = document.getElementById('form-consultation');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function handleHeroCTA() {
+            scrollToForm();
+        }
+
+        // Before/After Comparison Slider Logic
+        const slider = document.getElementById('before-after-slider');
+        const sliderHandle = document.getElementById('slider-handle');
+        const afterContainer = document.getElementById('slider-after-container');
+
+        let isDragging = false;
+
+        function setSliderPosition(xPercentage) {
+            if (xPercentage < 0) xPercentage = 0;
+            if (xPercentage > 100) xPercentage = 100;
+            
+            sliderHandle.style.left = `${xPercentage}%`;
+            afterContainer.style.clipPath = `inset(0 0 0 ${xPercentage}%)`;
+        }
+
+        function handleSliderMove(clientX) {
+            const rect = slider.getBoundingClientRect();
+            const x = clientX - rect.left;
+            const percentage = (x / rect.width) * 100;
+            setSliderPosition(percentage);
+        }
+
+        // Mouse Events
+        sliderHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            e.preventDefault();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            handleSliderMove(e.clientX);
+        });
+
+        // Touch Events (Mobile)
+        sliderHandle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+        }, { passive: true });
+
+        window.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        window.addEventListener('touchmove', (e) => {
+            if (!isDragging) return;
+            if (e.touches.length > 0) {
+                handleSliderMove(e.touches[0].clientX);
+            }
+        }, { passive: true });
+
+        // Look switcher for before-after slider
+        function changeSliderLook(lookIndex, btnElement) {
+            state.sliderActiveLook = lookIndex;
+
+            // Highlight look buttons
+            document.querySelectorAll('.slider-look-btn').forEach(btn => {
+                btn.className = "slider-look-btn px-4 py-2 text-xs font-bold rounded-full border border-white/10 bg-white/5 text-gray-400 hover:text-white transition-all duration-300";
+            });
+            btnElement.className = "slider-look-btn px-4 py-2 text-xs font-bold rounded-full border border-brand-gold bg-brand-gold/15 text-brand-gold transition-all duration-300 shadow-md";
+
+            // Fade transition images
+            const beforeImg = document.getElementById('slider-before-img');
+            const afterImg = document.getElementById('slider-after-img');
+
+            beforeImg.style.opacity = '0.3';
+            afterImg.style.opacity = '0.3';
+
+            setTimeout(() => {
+                beforeImg.src = encodeURI(sliderLooks[lookIndex].before);
+                afterImg.src = encodeURI(sliderLooks[lookIndex].after);
+                beforeImg.style.opacity = '1';
+                afterImg.style.opacity = '1';
+            }, 200);
+        }
+
+        // Listen for radio button change in final form to sync gallery up top
+        document.querySelectorAll('input[name="model-choice"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                switchColor(e.target.value, null);
+            });
+        });
+
+        // Form Submit
+        function submitForm(event) {
+            event.preventDefault();
+            
+            const submitBtn = event.target.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            
+            // Set loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-black inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                Wysyłanie...
+            `;
+            
+            const fullName = document.getElementById('full-name').value;
+            const phone = document.getElementById('phone-number').value;
+            const address = document.getElementById('delivery-address').value;
+            
+            let modelLabel = '';
+            if (state.selectedColor === 'honey') modelLabel = 'Miodowy Blond (38cm)';
+            else if (state.selectedColor === 'platinum') modelLabel = 'Platyna (38cm)';
+            else if (state.selectedColor === 'chestnut') modelLabel = 'Szary Brąz (33cm)';
+
+            // Prepare payload
+            const payload = {
+                name: fullName,
+                phone: phone,
+                address: address,
+                model: modelLabel,
+                quantity: state.quantity
+            };
+
+            // Success callback
+            const handleSuccess = () => {
+                // Populate success modal content
+                document.getElementById('modal-user-name').textContent = fullName;
+                document.getElementById('modal-model-name').textContent = modelLabel;
+                document.getElementById('modal-qty').textContent = state.quantity;
+
+                // Open Modal
+                const modal = document.getElementById('success-modal');
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.add('opacity-100');
+                    modal.firstElementChild.classList.remove('scale-95');
+                    modal.firstElementChild.classList.add('scale-100');
+                }, 10);
+
+                // Reset loading state and form fields
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+                document.getElementById('consultation-form').reset();
+            };
+
+            // Replace this with your Google Web App URL after deploying Google Apps Script
+            const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbyKEKa-CuQJguyaB3_SrhzTCAdahLCHUMG9pzyFHAPyGrENlpuI1Si8g3DZP8QFOh5v/exec';
+
+            if (googleScriptUrl === 'YOUR_GOOGLE_APPS_SCRIPT_URL' || !googleScriptUrl) {
+                // Fallback / Mock Mode: immediately display success modal if URL not set
+                setTimeout(handleSuccess, 800);
+            } else {
+                // Send data to Google Apps Script
+                fetch(googleScriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors', // allows sending request to Apps Script without CORS errors
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(() => {
+                    handleSuccess();
+                })
+                .catch(error => {
+                    console.error('Error submitting form:', error);
+                    alert("Wystąpił błąd podczas wysyłania. Spróbuj ponownie później.");
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                });
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('success-modal');
+            modal.classList.remove('opacity-100');
+            modal.firstElementChild.classList.remove('scale-100');
+            modal.firstElementChild.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Sticky header styling on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.remove('py-1.5', 'sm:py-4');
+                header.classList.add('py-1', 'sm:py-2', 'shadow-lg');
+            } else {
+                header.classList.remove('py-1', 'sm:py-2', 'shadow-lg');
+                header.classList.add('py-1.5', 'sm:py-4');
+            }
+        });
+
+        // Live order toast notification simulation
+        const buyersList = [
+            { name: "Elena R.", city: "z Warszawy", action: "pomyślnie zamówiła perukę", model: "Miodowy Blond", qty: "30 sztuk", time: "1 minutę temu", img: "https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_1.png?v=1782289965" },
+            { name: "Sofia M.", city: "z Krakowa", action: "pomyślnie kupiła perukę", model: "Szary Brąz", qty: "1 sztukę", time: "3 minuty temu", img: "https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_3_2.png?v=1782289965" },
+            { name: "Giulia B.", city: "z Gdańska", action: "pomyślnie zamówiła perukę", model: "Platyna", qty: "1 sztukę", time: "5 minut temu", img: "https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_2.png?v=1782289965" },
+            { name: "Martina G.", city: "z Wrocławia", action: "pomyślnie zarezerwowała konsultację", model: "Miodowy Blond", qty: "50 sztuk", time: "8 minut temu", img: "https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_1.png?v=1782289965" },
+            { name: "Chiara V.", city: "z Poznania", action: "pomyślnie kupiła perukę", model: "Platyna", qty: "1 sztukę", time: "12 minut temu", img: "https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_2.png?v=1782289965" },
+            { name: "Francesca B.", city: "z Łodzi", action: "pomyślnie zarezerwowała konsultację", model: "Szary Brąz", qty: "100 sztuk", time: "15 minut temu", img: "https://cdn.shopify.com/s/files/1/0827/5053/7942/files/product_3_2.png?v=1782289965" }
+        ];
+
+        let toastIndex = 0;
+        const toastElement = document.getElementById('live-order-toast');
+        const toastImg = document.getElementById('toast-product-img');
+        const toastMsg = document.getElementById('toast-message');
+        const toastTime = document.getElementById('toast-time');
+
+        function showOrderToast() {
+            const buyer = buyersList[toastIndex];
+            
+            // Set content
+            toastImg.src = encodeURI(buyer.img);
+            toastMsg.innerHTML = `<strong class="text-white">${buyer.name}</strong> ${buyer.city} ${buyer.action} <strong class="text-brand-gold">${buyer.model}</strong> (${buyer.qty})`;
+            toastTime.textContent = buyer.time;
+
+            // Animate In
+            toastElement.classList.remove('translate-y-28', 'opacity-0', 'pointer-events-none');
+            toastElement.classList.add('translate-y-0', 'opacity-100');
+
+            // Set index for next notification
+            toastIndex = (toastIndex + 1) % buyersList.length;
+
+            // Auto hide after 5 seconds
+            setTimeout(hideOrderToast, 5000);
+        }
+
+        function hideOrderToast() {
+            toastElement.classList.remove('translate-y-0', 'opacity-100');
+            toastElement.classList.add('translate-y-28', 'opacity-0', 'pointer-events-none');
+        }
+
+        // Loop toast notification every 10 seconds (starting after 4 seconds)
+        setTimeout(() => {
+            showOrderToast();
+            setInterval(showOrderToast, 10000);
+        }, 4000);
+
+        // Horizontal gallery slider scroll logic
+        function scrollGallery(direction) {
+            const container = document.getElementById('gallery-slider-container');
+            if (!container) return;
+            const card = container.querySelector('.snap-start');
+            if (!card) return;
+            const cardWidth = card.getBoundingClientRect().width;
+            const gap = 24; // Tailwind gap-6 is 24px
+            container.scrollBy({
+                left: direction * (cardWidth + gap),
+                behavior: 'smooth'
+            });
+        }
+
+        // Initialize default view state
+        updatePriceDisplay();
+    </script>
+</body>
+</html>
