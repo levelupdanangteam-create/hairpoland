@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAÏA Cacao Ceremonial – Flujo Sanguíneo y Circulación</title>
+<meta name="description" content="Cacao ceremonial criollo con flavanoles de cacao y nattokinasa. Sin azúcar, 100% natural. Garantía de devolución de 30 días.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================
+   CONFIGURACIÓN RÁPIDA
+   - Enlace de compra: busca  CHECKOUT_URL  en el <script> al final.
+   - Imágenes: están enlazadas al host original (assets.imagehub.io).
+     Recomendado: descárgalas, súbelas a /cacao/img/ en Hostinger
+     y cambia la constante IMG_BASE o las rutas src.
+   ========================================================= */
+:root{
+  --bg:#fbf6ee; --bg-alt:#f3e9da; --card:#ffffff;
+  --brown-900:#2b150c; --brown-800:#3d1f12; --brown-700:#552c1a; --brown-500:#8a5a3c;
+  --gold:#c9963a; --gold-light:#e7c27d;
+  --green:#2f7a3b; --green-dark:#24602e;
+  --text:#2b1a12; --muted:#6f5a4d; --line:#e6d8c4;
+  --red:#c0392b;
+  --radius:14px; --shadow:0 10px 30px rgba(43,21,12,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:"Playfair Display",Georgia,serif;line-height:1.2;color:var(--brown-900)}
+h2{font-size:clamp(1.6rem,3.6vw,2.4rem);text-align:center;margin-bottom:.6rem}
+.container{width:100%;max-width:1140px;margin:0 auto;padding:0 16px}
+section{padding:64px 0}
+.eyebrow{display:block;text-align:center;text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;font-weight:700;color:var(--gold);margin-bottom:.5rem}
+.lead{text-align:center;max-width:720px;margin:0 auto 2rem;color:var(--muted)}
+.dark{background:var(--brown-900);color:#f4e8d8}
+.dark h2,.dark h3{color:#fff}
+.dark .lead{color:#d9c6b0}
+.alt{background:var(--bg-alt)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:var(--green);color:#fff;text-decoration:none;font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:.95rem;padding:16px 28px;border-radius:10px;border:0;cursor:pointer;box-shadow:0 6px 18px rgba(47,122,59,.35);transition:transform .15s,background .15s;width:100%;max-width:440px}
+.btn:hover{background:var(--green-dark);transform:translateY(-2px)}
+.btn-wrap{text-align:center;margin-top:2rem}
+
+/* Barra superior */
+.topbar{background:var(--brown-900);color:#fff;text-align:center;font-size:.8rem;font-weight:600;padding:8px 12px;letter-spacing:.03em}
+.topbar b{color:var(--gold-light);font-variant-numeric:tabular-nums}
+header.site{background:var(--bg);border-bottom:1px solid var(--line);padding:12px 0}
+header.site .container{display:flex;justify-content:center}
+header.site img{height:38px;width:auto}
+
+/* HERO */
+.hero{padding:32px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:start}
+.gallery-main{border-radius:var(--radius);overflow:hidden;background:var(--card);box-shadow:var(--shadow);aspect-ratio:1/1}
+.gallery-main img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-top:10px}
+.thumbs button{border:2px solid transparent;border-radius:8px;overflow:hidden;padding:0;background:#fff;cursor:pointer;aspect-ratio:1/1}
+.thumbs button.active{border-color:var(--gold)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.rating{display:flex;align-items:center;gap:8px;font-size:.88rem;color:var(--muted);margin-bottom:.6rem}
+.stars{color:#f5a623;letter-spacing:2px}
+.hero h1{font-size:clamp(1.7rem,3.8vw,2.5rem);margin-bottom:.8rem}
+.hero .sub{color:var(--muted);margin-bottom:1.2rem}
+.checks{list-style:none;display:grid;gap:10px;margin-bottom:1.4rem}
+.checks li{display:flex;gap:10px;align-items:flex-start;font-size:.95rem}
+.checks li::before{content:"✓";flex:0 0 22px;height:22px;border-radius:50%;background:var(--green);color:#fff;font-size:.75rem;font-weight:700;display:grid;place-items:center;margin-top:2px}
+.stock{background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:1rem;font-size:.85rem}
+.stock p{margin-bottom:8px;color:var(--muted)}
+.bar{height:8px;background:#efe3d3;border-radius:99px;overflow:hidden}
+.bar span{display:block;height:100%;width:84%;background:linear-gradient(90deg,var(--gold),var(--red))}
+.stock-row{display:flex;justify-content:space-between;font-weight:700;font-size:.8rem;margin-top:6px}
+.stock-row .so{color:var(--red)}
+.offer-banner{border-radius:10px;overflow:hidden;margin-bottom:1rem}
+
+/* Selector de packs */
+.packs{display:grid;gap:10px;margin-bottom:1rem}
+.pack{position:relative;display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--line);border-radius:12px;padding:14px;cursor:pointer;transition:border-color .15s}
+.pack input{accent-color:var(--green);width:18px;height:18px}
+.pack.selected{border-color:var(--green);background:#f4faf2}
+.pack .name{font-weight:700}
+.pack .desc{font-size:.8rem;color:var(--muted)}
+.pack .price{margin-left:auto;text-align:right;font-weight:800;color:var(--brown-900)}
+.pack .price s{display:block;font-weight:500;color:var(--muted);font-size:.8rem}
+.pack .tag{position:absolute;top:-10px;right:12px;background:var(--gold);color:#fff;font-size:.65rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:3px 8px;border-radius:99px}
+.gifts{background:var(--brown-800);color:#fff;border-radius:10px;padding:10px 14px;text-align:center;font-weight:700;font-size:.85rem;letter-spacing:.05em;margin-bottom:.8rem}
+.auto{font-size:.8rem;text-align:center;color:var(--green);font-weight:600;margin-bottom:.8rem}
+.ship{text-align:center;font-size:.85rem;color:var(--muted);margin-top:.8rem}
+.ship b{color:var(--brown-900)}
+.guarantee-mini{display:flex;gap:14px;align-items:center;background:#fff;border:1px dashed var(--gold);border-radius:12px;padding:14px;margin-top:1rem}
+.guarantee-mini img{width:64px;flex:0 0 64px}
+.guarantee-mini h3{font-size:1.05rem;margin-bottom:2px}
+.guarantee-mini p{font-size:.85rem;color:var(--muted)}
+
+/* Acordeón */
+.acc{border-top:1px solid var(--line);margin-top:1.2rem}
+.acc details{border-bottom:1px solid var(--line)}
+.acc summary{cursor:pointer;list-style:none;padding:14px 4px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.acc summary::-webkit-details-marker{display:none}
+.acc summary::after{content:"+";font-size:1.3rem;color:var(--gold);transition:transform .2s}
+.acc details[open] summary::after{transform:rotate(45deg)}
+.acc .body{padding:0 4px 16px;color:var(--muted);font-size:.93rem}
+
+/* Franja de stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
+.stat b{display:block;font-family:"Playfair Display",serif;font-size:2.2rem;color:var(--gold-light)}
+.stat span{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#d9c6b0}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:2rem}
+.badges span{border:1px solid rgba(231,194,125,.45);border-radius:99px;padding:6px 14px;font-size:.78rem;font-weight:600;color:#f4e8d8}
+
+/* Reseñas */
+.reviews{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.review{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.review img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.review .in{padding:18px}
+.review h3{font-size:1.05rem;margin:.3rem 0 .5rem}
+.review p{font-size:.9rem;color:var(--muted)}
+.review .who{margin-top:.8rem;font-weight:700;font-size:.85rem;color:var(--brown-900)}
+.review .who small{color:var(--green);font-weight:600;margin-left:6px}
+
+/* Ingredientes */
+.ingredients{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.ing{background:#fff;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);border-top:4px solid var(--gold)}
+.ing small{display:block;text-transform:uppercase;letter-spacing:.12em;font-size:.68rem;font-weight:700;color:var(--gold)}
+.ing h3{font-size:1.2rem;margin:.2rem 0 .5rem}
+.ing p{font-size:.9rem;color:var(--muted)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:2rem}
+.strip div{background:var(--brown-800);color:#fff;border-radius:10px;padding:12px;text-align:center;font-size:.8rem;font-weight:600}
+
+/* Bloques imagen + texto */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center}
+.split.rev .media{order:2}
+.split .media img{border-radius:var(--radius);box-shadow:var(--shadow);width:100%}
+.split h2{text-align:left}
+.split p{margin-bottom:1rem;color:var(--muted)}
+.dark .split p{color:#d9c6b0}
+.callout{background:#fff;border-left:4px solid var(--gold);padding:14px 18px;border-radius:8px;font-weight:600;color:var(--brown-900);margin:1rem 0}
+.dark .callout{background:rgba(255,255,255,.06);color:#fff}
+.mini-stats{display:flex;gap:12px;flex-wrap:wrap;margin:1rem 0}
+.mini-stats div{flex:1 1 120px;background:rgba(255,255,255,.07);border:1px solid rgba(231,194,125,.3);border-radius:10px;padding:12px;text-align:center}
+.mini-stats b{display:block;font-family:"Playfair Display",serif;font-size:1.6rem;color:var(--gold-light)}
+.mini-stats span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1rem 0}
+.vs div{border-radius:10px;padding:12px;font-size:.85rem;text-align:center}
+.vs .good{background:#eaf5e6;border:1px solid #bfdcb8}
+.vs .bad{background:#f8e6e3;border:1px solid #e9bfb8}
+.vs b{display:block;font-size:.95rem;color:var(--brown-900)}
+
+/* Beneficios */
+.benefits{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.benefit{display:flex;gap:14px;background:rgba(255,255,255,.06);border:1px solid rgba(231,194,125,.25);border-radius:var(--radius);padding:18px}
+.benefit .ic{flex:0 0 44px;height:44px;border-radius:50%;background:var(--gold);display:grid;place-items:center;font-size:1.2rem}
+.benefit h3{font-size:1.05rem;margin-bottom:4px}
+.benefit p{font-size:.88rem;color:#d9c6b0}
+.benefits-hero{display:grid;grid-template-columns:1fr 1.4fr;gap:32px;align-items:center}
+.benefits-hero img{border-radius:var(--radius)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:2rem}
+.kpis div{text-align:center;background:rgba(255,255,255,.06);border-radius:10px;padding:14px}
+.kpis b{display:block;color:var(--gold-light);font-family:"Playfair Display",serif;font-size:1.3rem}
+.kpis span{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em}
+
+/* Timeline */
+.timeline{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;align-items:start}
+.timeline .media img{border-radius:var(--radius);box-shadow:var(--shadow);position:sticky;top:20px}
+.step{position:relative;padding:0 0 26px 34px;border-left:2px solid var(--gold)}
+.step:last-child{border-left-color:transparent}
+.step::before{content:"";position:absolute;left:-9px;top:2px;width:16px;height:16px;border-radius:50%;background:var(--gold);border:3px solid var(--bg)}
+.step .when{display:inline-block;background:var(--brown-800);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:8px}
+.step ul{list-style:none;display:grid;gap:4px}
+.step li{font-size:.92rem;color:var(--muted)}
+.step li::before{content:"• ";color:var(--gold);font-weight:700}
+
+/* Preparación */
+.prep{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.prep figure{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.prep img{aspect-ratio:1/1;object-fit:cover;width:100%}
+.prep figcaption{padding:14px;text-align:center}
+.prep b{display:block;color:var(--brown-900);margin-bottom:4px}
+.prep span{font-size:.85rem;color:var(--muted)}
+
+/* Comparativa */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;background:#fff;border-radius:var(--radius);box-shadow:var(--shadow)}
+table.cmp{width:100%;border-collapse:collapse;min-width:640px}
+.cmp th,.cmp td{padding:12px 10px;text-align:center;border-bottom:1px solid var(--line);font-size:.88rem}
+.cmp th{vertical-align:bottom;font-size:.8rem}
+.cmp th img{width:64px;height:64px;object-fit:contain;margin:0 auto 6px}
+.cmp td:first-child,.cmp th:first-child{text-align:left;font-weight:600;color:var(--brown-900)}
+.cmp .us{background:#f4faf2}
+.yes{color:var(--green);font-weight:800;font-size:1.1rem}
+.no{color:var(--red);font-weight:800;font-size:1.1rem}
+
+/* Dos mundos */
+.worlds{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.world{background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.world img{aspect-ratio:16/9;object-fit:cover;width:100%}
+.world .in{padding:20px}
+.world h3{margin-bottom:.6rem}
+.world ul{list-style:none;display:grid;gap:6px}
+.world li{font-size:.9rem;color:var(--muted);padding-left:22px;position:relative}
+.world li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800}
+
+/* Garantía */
+.guarantee{display:flex;gap:28px;align-items:center;background:#fff;border:2px solid var(--gold);border-radius:20px;padding:32px;box-shadow:var(--shadow)}
+.guarantee img{width:140px;flex:0 0 140px}
+.guarantee h2{text-align:left}
+.guarantee p{color:var(--muted);margin-bottom:.8rem}
+.guarantee .pills{display:flex;flex-wrap:wrap;gap:8px}
+.guarantee .pills span{background:#f4faf2;border:1px solid #bfdcb8;color:var(--green-dark);font-size:.78rem;font-weight:700;padding:5px 12px;border-radius:99px}
+
+/* FAQ */
+.faq{max-width:820px;margin:0 auto}
+.faq .acc{background:#fff;border-radius:var(--radius);box-shadow:var(--shadow);padding:0 18px;border-top:0}
+.faq .acc details:last-child{border-bottom:0}
+
+/* Final */
+.final{position:relative;background:var(--brown-900) center/cover no-repeat;color:#fff;text-align:center;padding:96px 0}
+.final::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,21,12,.75),rgba(43,21,12,.9))}
+.final .container{position:relative}
+.final h2{color:#fff}
+.final p{max-width:720px;margin:0 auto;color:#ead8c2}
+.trustline{margin-top:1rem;font-size:.82rem;color:#ead8c2}
+
+footer{background:#1c0d07;color:#bfa995;font-size:.78rem;padding:32px 0 100px}
+footer .disc{max-width:900px;margin:0 auto 1rem;text-align:center}
+footer nav{display:flex;flex-wrap:wrap;justify-content:center;gap:14px}
+footer nav a{text-decoration:none}
+footer nav a:hover{color:#fff}
+.refs{max-width:900px;margin:0 auto 1rem;text-align:center;font-size:.72rem;opacity:.8}
+
+/* CTA fijo móvil */
+.sticky-cta{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);padding:10px 16px;display:none;z-index:50;box-shadow:0 -6px 20px rgba(0,0,0,.08)}
+.sticky-cta .btn{max-width:none;padding:14px}
+
+@media (max-width:900px){
+  .hero-grid,.split,.timeline,.benefits-hero,.worlds{grid-template-columns:1fr;gap:28px}
+  .split.rev .media{order:0}
+  .reviews,.ingredients{grid-template-columns:1fr}
+  .prep{grid-template-columns:repeat(2,1fr)}
+  .stats,.strip,.kpis{grid-template-columns:repeat(2,1fr)}
+  .benefits{grid-template-columns:1fr}
+  .guarantee{flex-direction:column;text-align:center}
+  .guarantee h2{text-align:center}
+  .guarantee .pills{justify-content:center}
+  .timeline .media img{position:static}
+  .sticky-cta{display:block}
+  section{padding:48px 0}
+}
+@media (max-width:420px){
+  .prep{grid-template-columns:1fr}
+  .thumbs{grid-template-columns:repeat(5,1fr);gap:6px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🔥 OFERTA POR TIEMPO LIMITADO · Termina en <b id="countdown">03 H : 00 MIN : 00 S</b></div>
+
+<header class="site">
+  <div class="container">
+    <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/maia_logo_fixed_615fe75f.png?versionId=fv7X.wQpU.ko69xhuA7vyWPKM26D2.NS" alt="MAÏA">
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="gallery-main"><img id="mainImg" src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775161083177_Screenshot2fdtr026_03_08at4.44.55AM_1bbb509dsd.webp" alt="Cliente disfrutando MAÏA Cacao Ceremonial"></div>
+      <div class="thumbs" id="thumbs">
+        <button class="active" data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775161083177_Screenshot2fdtr026_03_08at4.44.55AM_1bbb509dsd.webp"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775161083177_Screenshot2fdtr026_03_08at4.44.55AM_1bbb509dsd.webp" alt="Estilo de vida"></button>
+        <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775158433213_carousel_benefits_v4_2547d3a3_11zon.webp"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775158433213_carousel_benefits_v4_2547d3a3_11zon.webp" alt="Beneficios"></button>
+        <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793660070340_openart_gpt_image_2_edit_1_1793658040645_e6ff1c02_1_1_.png"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793660070340_openart_gpt_image_2_edit_1_1793658040645_e6ff1c02_1_1_.png" alt="Ciencia"></button>
+        <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793533558761_openart_gpt_image_2_edit_1_1793495303652_e8e76aba_1_.png"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793533558761_openart_gpt_image_2_edit_1_1793495303652_e8e76aba_1_.png" alt="Modo de uso"></button>
+        <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775160969900_carousel_trust_v3_4e8ec609_11zon.webp"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775160969900_carousel_trust_v3_4e8ec609_11zon.webp" alt="Confianza"></button>
+      </div>
+    </div>
+
+    <div>
+      <div class="rating"><span class="stars">★★★★★</span> 4,9 de 5 · 2.847 reseñas</div>
+      <h1>Apoya de forma natural el óxido nítrico y el flujo sanguíneo con Cacao Ceremonial*</h1>
+      <p class="sub">Cacao criollo rico en flavanoles: el apoyo natural más puro para tu circulación y tu bienestar cardiovascular*</p>
+
+      <ul class="checks">
+        <li>Los flavanoles del cacao ayudan a mantener la elasticidad de los vasos sanguíneos, lo que contribuye a un flujo sanguíneo normal*</li>
+        <li>Apoya de forma natural la circulación y el bienestar cardiovascular*</li>
+        <li>Enriquecido con Nattokinasa, un superalimento tradicional japonés</li>
+        <li>Cero azúcar, 100% puro y natural, sin aditivos</li>
+        <li>Cacao criollo ultra-raro de fincas indígenas con cosechas limitadas</li>
+      </ul>
+
+      <div class="stock">
+        <p>Elaboramos en pequeños lotes para garantizar la máxima frescura y potencia. Haz tu pedido ahora: la próxima reposición no llegará hasta dentro de varias semanas.</p>
+        <div class="bar"><span></span></div>
+        <div class="stock-row"><span>Lote anterior: AGOTADO</span><span class="so">Lote actual: 84% VENDIDO</span></div>
+      </div>
+
+      <div class="offer-banner"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1794231820067_top_early_black_friday_48784457_1_.png" alt="Oferta especial"></div>
+
+      <div class="gifts">🎁 OFERTA LIMITADA – LLÉVATE 3 REGALOS GRATIS</div>
+
+      <!-- Selector de packs: ajusta nombres, precios y enlaces en el script final (PACKS) -->
+      <div class="packs" id="packs"></div>
+
+      <p class="auto">✓ Oferta por tiempo limitado – descuento aplicado automáticamente</p>
+      <a class="btn" id="buyBtn" href="#">Añadir al carrito →</a>
+      <p class="ship">🚚 Envío rápido · Recíbelo el <b id="deliveryDate">miércoles</b></p>
+
+      <div class="guarantee-mini">
+        <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/guarantee-badge-imstJoaRShMnfPb8TuRc5u.webp?versionId=mBGMSz7acO6iTgdtjeMOkCJ8KAVHzMq9" alt="Garantía 30 días">
+        <div>
+          <h3>Siéntete mejor o es gratis.</h3>
+          <p>¡Pruébalo sin riesgo! Si en 30 días no te sientes con más energía o no estás satisfecho, te devolvemos tu dinero, sin preguntas.</p>
+        </div>
+      </div>
+
+      <div class="acc">
+        <details open>
+          <summary>¿En qué se diferencia MAÏA del cacao normal o del chocolate negro?</summary>
+          <div class="body">A diferencia del cacao en polvo común o del chocolate negro, MAÏA utiliza granos de cacao criollo ultra-raros, la variedad más apreciada del mundo. Nuestro proceso propio a baja temperatura conserva todo el espectro de flavanoles que el procesado convencional destruye. Además, no añadimos azúcar ni aditivos.</div>
+        </details>
+        <details>
+          <summary>Los nutrientes detrás de los beneficios de MAÏA</summary>
+          <div class="body">Cada ración aporta una potente combinación de epicatequina (el flavanol clave), teobromina, magnesio, un complejo natural de flavonoides y trazas de anandamida y PEA. Estos compuestos trabajan en sinergia para apoyar la circulación y el bienestar del corazón.*</div>
+        </details>
+        <details>
+          <summary>Beneficios que puedes esperar</summary>
+          <div class="body">En las primeras horas, muchos usuarios notan más claridad mental y una sensación de mejor circulación. Durante el primer mes puedes notar una energía más constante. El uso a largo plazo apoya la elasticidad de los vasos sanguíneos y la vitalidad cardiovascular.*</div>
+        </details>
+        <details>
+          <summary>Cómo prepararlo</summary>
+          <div class="body">Mezcla una cucharada con agua caliente o tu leche favorita. Remueve bien y ¡disfruta! Sabe a un chocolate caliente ceremonial intenso. Todo el ritual lleva menos de 2 minutos.</div>
+        </details>
+        <details>
+          <summary>¿A qué sabe?</summary>
+          <div class="body">MAÏA tiene un sabor a chocolate rico y profundo con sutiles notas terrosas, como el mejor cacao ceremonial. Es naturalmente amargo-dulce, sin azúcar añadido. Muchos clientes lo describen como «el mejor chocolate caliente que he probado» una vez que añaden su endulzante preferido.</div>
+        </details>
+        <details>
+          <summary>Información nutricional</summary>
+          <div class="body">Cada ración (6,7 g) contiene: 25 kcal, 1,5 g de grasa, 3 g de hidratos de carbono, 1 g de fibra, 0 g de azúcar, 1 g de proteína. Además de todo el espectro de flavanoles, teobromina, magnesio y el complejo de polifenoles ceremonial.</div>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="dark">
+  <div class="container">
+    <span class="eyebrow">Respaldado por la ciencia</span>
+    <h2>Nuestro cacao ceremonial contiene los mismos flavanoles estudiados en importantes investigaciones clínicas</h2>
+    <div class="stats" style="margin-top:2rem">
+      <div class="stat"><b>20+</b><span>Años de investigación sobre flavanoles</span></div>
+      <div class="stat"><b>35+</b><span>Ensayos clínicos sobre flavanoles del cacao</span></div>
+      <div class="stat"><b>150+</b><span>Publicaciones sobre flavanoles del cacao</span></div>
+      <div class="stat"><b>✓</b><span>Revisado por pares</span></div>
+    </div>
+    <div class="badges">
+      <span>🌿 100% Ecológico</span><span>🚫 Sin azúcar</span><span>🌾 Sin gluten</span><span>🧬 No transgénico</span><span>🌱 100% Vegano</span><span>🔬 Analizado en laboratorio</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= RESEÑAS ================= -->
+<section>
+  <div class="container">
+    <span class="eyebrow">Opiniones reales</span>
+    <h2>Lo que dicen nuestros clientes</h2>
+    <p class="lead">Más de 2.800 personas ya han convertido MAÏA en su ritual diario.</p>
+    <div class="reviews">
+      <article class="review">
+        <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/mask_group_85.webp?versionId=9yXsfUiq7ja6bw0r9yRXNCKdbw7SMw.p" alt="Opinión de cliente" loading="lazy">
+        <div class="in">
+          <span class="stars">★★★★★</span>
+          <h3>«¡Noté mi circulación mucho mejor!»</h3>
+          <p>Llevo varios meses tomando MAÏA y siento mi circulación mucho mejor. Me alegra mucho haber encontrado esta solución natural.</p>
+          <div class="who">Sara T.<small>✓ Compra verificada</small></div>
+        </div>
+      </article>
+      <article class="review">
+        <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/1771533611061_hf_20260201_174934_ebe2f4e1_7ebf_4a0f_bf37_ca49f05adcb1.jpg?versionId=DNmp7.lU6PGFYJFT5es0jkWQPnmeCpsE" alt="Producto en mano" loading="lazy">
+        <div class="in">
+          <span class="stars">★★★★★</span>
+          <h3>«La bebida para el corazón más limpia que he probado.»</h3>
+          <p>La mayoría de productos parecen procesados, pero MAÏA sabe puro e intenso, como debe ser. Se ha convertido en un ritual diario para cuidar mi corazón.</p>
+          <div class="who">Jaime H.<small>✓ Compra verificada</small></div>
+        </div>
+      </article>
+      <article class="review">
+        <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/1771533607727_hf_20260201_174814_aa304414_9391_469b_b709_755165bd57d7_1_.png?versionId=IaPi4q_LTfT_oOunAcyUC.RIm_EofOq7" alt="Envase MAÏA" loading="lazy">
+        <div class="in">
+          <span class="stars">★★★★★</span>
+          <h3>«Más energía Y mejor circulación.»</h3>
+          <p>Noto la diferencia: mejor circulación y, en general, me siento con más vitalidad. Mucho mejor que todos los suplementos que había probado.</p>
+          <div class="who">Antonio S.<small>✓ Compra verificada</small></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INGREDIENTES ================= -->
+<section class="alt">
+  <div class="container">
+    <span class="eyebrow">Fórmula</span>
+    <h2>6 compuestos respaldados por la ciencia en cada cucharada</h2>
+    <p class="lead">Cada ración aporta una dosis precisa de compuestos que apoyan tus arterias. Sin rellenos. Sin artificios. Solo lo que tus vasos sanguíneos necesitan para mantenerse sanos y flexibles.</p>
+    <div class="ingredients">
+      <div class="ing"><small>Guardián arterial</small><h3>Epicatequina</h3><p>El principal flavanol, que apoya la flexibilidad arterial y protege las paredes de los vasos.*</p></div>
+      <div class="ing"><small>Energía limpia</small><h3>Teobromina</h3><p>Un compuesto natural exclusivo del cacao: energía suave y sostenida, sin nerviosismo ni bajón.</p></div>
+      <div class="ing"><small>Escudo antioxidante</small><h3>Complejo de flavonoides</h3><p>Una potente mezcla de antioxidantes naturales que trabajan en sinergia frente al estrés oxidativo.*</p></div>
+      <div class="ing"><small>Relajación</small><h3>Magnesio</h3><p>Contribuye al funcionamiento normal de los músculos y a reducir el cansancio y la fatiga.</p></div>
+      <div class="ing"><small>Estado de ánimo</small><h3>Anandamida</h3><p>La «molécula de la felicidad», presente de forma natural en el cacao.</p></div>
+      <div class="ing"><small>Enfoque</small><h3>PEA</h3><p>Feniletilamina: concentración, claridad y buen humor.</p></div>
+    </div>
+    <div class="strip">
+      <div>🔬 Analizado por laboratorio externo</div><div>🚫 Cero aditivos ni rellenos</div><div>📊 Dosis estudiadas clínicamente</div><div>⏱️ Notarás la diferencia en horas</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CIRCULACIÓN ================= -->
+<section>
+  <div class="container split">
+    <div class="media"><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/hidden-truth-arteries-v2-WiwPiYLVBHxYKNnNo8ekDY.webp?versionId=jZHP3b3iujmb1H3LYS9ath6p5bY9ABuN" alt="Ilustración de la circulación" loading="lazy"></div>
+    <div>
+      <span class="eyebrow" style="text-align:left">La verdad oculta</span>
+      <h2>Sobre tu circulación</h2>
+      <p>Tu sistema cardiovascular es como una intrincada red de ríos que transporta oxígeno y nutrientes vitales a cada célula de tu cuerpo.</p>
+      <div class="callout">Con la edad, el estrés y el sedentarismo, la elasticidad de los vasos sanguíneos disminuye, a menudo sin que nos demos cuenta.</div>
+      <p>Una circulación menos eficiente puede traducirse en menos energía, niebla mental y menor rendimiento físico.</p>
+      <p>Para funcionar de forma óptima, tu cuerpo se beneficia de compuestos vegetales llamados <strong>flavanoles</strong>, que ayudan a mantener la elasticidad de los vasos sanguíneos y contribuyen a un flujo sanguíneo normal.*</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LA SOLUCIÓN ================= -->
+<section class="dark">
+  <div class="container">
+    <span class="eyebrow">Presentamos</span>
+    <h2>La solución sagrada para apoyar un flujo sanguíneo saludable</h2>
+    <div class="split" style="margin-top:2rem">
+      <div class="media"><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/cosmos-researcher-eQGTevivjX9ZXqHMgERTJF.webp?versionId=8wGcNTIudycmzNBtcGOzC4_E3Nwvnb9l" alt="Investigación en laboratorio" loading="lazy"></div>
+      <div>
+        <p>Respaldado por décadas de investigación revisada por pares sobre los flavanoles del cacao y la salud cardiovascular.</p>
+        <p>El Cacao Ceremonial MAÏA está repleto de los flavanoles más potentes de la naturaleza. Cuando tomas nuestro cacao, le das a tu corazón y a tu circulación el apoyo que necesitan, justo donde más importa.*</p>
+        <div class="callout">#1 Respaldado por la ciencia</div>
+        <p>Nuestro cacao contiene los mismos flavanoles estudiados en decenas de ensayos clínicos por sus efectos sobre la función vascular y la elasticidad de los vasos sanguíneos.</p>
+        <div class="mini-stats">
+          <div><b>20+</b><span>Años de investigación</span></div>
+          <div><b>35+</b><span>Ensayos clínicos</span></div>
+          <div><b>150+</b><span>Artículos publicados</span></div>
+        </div>
+        <p>Los investigadores han observado que los efectos de los flavanoles sobre la función vascular comienzan pocas horas después de su consumo y que trabajan en armonía con los sistemas naturales de tu cuerpo. La ciencia no es nueva: lleva más de dos décadas construyéndose en instituciones de investigación de todo el mundo.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CALIDAD ================= -->
+<section>
+  <div class="container split rev">
+    <div class="media"><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/cacao-quality-comparison-Cznk4LTntzGENivZteVrak.webp?versionId=zGLgkkj2n3Qp40U27jr6r8PK.fone2m." alt="Comparación de cacao" loading="lazy"></div>
+    <div>
+      <span class="eyebrow" style="text-align:left">La diferencia</span>
+      <h2>Ingrediente vegetal probado. Resultados reales.</h2>
+      <div class="vs">
+        <div class="good"><b>CACAO CEREMONIAL MAÏA</b>Grado ceremonial</div>
+        <div class="bad"><b>CACAO EN POLVO COMÚN</b>Procesado industrialmente</div>
+      </div>
+      <p>Quizá te preguntes: ¿por qué no comer simplemente chocolate negro o tomar suplementos de cacao?</p>
+      <p>Muchas personas lo han intentado con chocolate o productos de cacao estándar y siguen sin notar diferencia.</p>
+      <div class="callout">El procesado convencional puede destruir hasta el 60% de los compuestos beneficiosos del cacao.</div>
+      <p><strong>Más flavanoles = mejor apoyo al flujo sanguíneo.</strong> Los niveles de flavanoles varían enormemente entre cacaos. MAÏA conserva todo el espectro de flavanoles bioactivos que el procesado industrial destruye.*</p>
+      <a class="btn cta" href="#">Reclamar mi oferta limitada →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BENEFICIOS ================= -->
+<section class="dark" style="background:var(--brown-800)">
+  <div class="container">
+    <span class="eyebrow">Beneficios</span>
+    <h2>Lo que MAÏA Super Cacao hace por ti</h2>
+    <div class="benefits-hero" style="margin-top:2rem">
+      <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/maia-product-nobg_931cef26.png?versionId=0ap1O72nLexnZxjv0Gzr641oHhs.hVpP" alt="MAÏA Super Cacao" loading="lazy">
+      <div class="benefits">
+        <div class="benefit"><div class="ic">❤️</div><div><h3>Favorece una circulación saludable*</h3><p>Ayuda a mantener la elasticidad de los vasos sanguíneos y un flujo sanguíneo normal en todo el cuerpo.</p></div></div>
+        <div class="benefit"><div class="ic">⚡</div><div><h3>Energía natural*</h3><p>La teobromina aporta energía suave y sostenida, sin los nervios ni el bajón de la cafeína.</p></div></div>
+        <div class="benefit"><div class="ic">🫀</div><div><h3>Vitalidad para el corazón*</h3><p>Una completa combinación de flavanoles, minerales y compuestos naturales que nutren tu sistema cardiovascular.</p></div></div>
+        <div class="benefit"><div class="ic">🧠</div><div><h3>Claridad y buen humor*</h3><p>Anandamida y PEA, presentes de forma natural en el cacao, para un estado de ánimo equilibrado.</p></div></div>
+        <div class="benefit"><div class="ic">🌿</div><div><h3>Óxido nítrico*</h3><p>Los flavanoles del cacao estudiados clínicamente favorecen la producción natural de óxido nítrico.</p></div></div>
+        <div class="benefit"><div class="ic">🍫</div><div><h3>Sin picos de azúcar</h3><p>Cero azúcar añadido: todo el placer del chocolate, sin comprometer tu metabolismo.</p></div></div>
+      </div>
+    </div>
+    <div class="kpis">
+      <div><b>Alto</b><span>Flavanoles por ración</span></div>
+      <div><b>2.000 FU</b><span>Nattokinasa</span></div>
+      <div><b>35+</b><span>Estudios clínicos</span></div>
+      <div><b>Horas</b><span>Para notar la diferencia</span></div>
+    </div>
+    <div class="btn-wrap"><a class="btn cta" href="#">Reclamar mi oferta limitada →</a></div>
+  </div>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section>
+  <div class="container">
+    <span class="eyebrow">Tu progreso</span>
+    <h2>Qué esperar con MAÏA</h2>
+    <div class="timeline" style="margin-top:2rem">
+      <div class="media"><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/timeline-lifestyle-iULT8vVrG2VsHtiofz5nHC.webp?versionId=tUWBWyKu9rB4bLhjQaWkozs4IkwwyGke" alt="Estilo de vida activo" loading="lazy"></div>
+      <div>
+        <div class="step"><span class="when">Primeras horas</span><ul><li>Suave aumento de energía</li><li>Mayor claridad mental</li><li>Sensación de mejor circulación</li></ul></div>
+        <div class="step"><span class="when">Primera semana</span><ul><li>Niveles de energía más constantes</li><li>Mejor sensación de circulación durante el día</li><li>Mayor conciencia corporal</li></ul></div>
+        <div class="step"><span class="when">Primer mes</span><ul><li>Mayor resistencia física</li><li>Mejor resiliencia ante el estrés</li><li>Una rutina cardiosaludable consolidada</li></ul></div>
+        <div class="step"><span class="when">Largo plazo</span><ul><li>Apoyo sostenido al flujo sanguíneo</li><li>Vasos sanguíneos más elásticos*</li><li>Mayor bienestar general</li></ul></div>
+        <p style="font-size:.8rem;color:var(--muted)">*Los resultados pueden variar de una persona a otra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PREPARACIÓN ================= -->
+<section class="alt">
+  <div class="container">
+    <span class="eyebrow">Ritual diario</span>
+    <h2>Cómo preparar tu cacao MAÏA</h2>
+    <p class="lead">Un sencillo ritual de 2 minutos que apoya la salud de tu corazón cada día.</p>
+    <div class="prep">
+      <figure><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/1747949592913_image___2025_01_24T010152.184_11zon.webp?versionId=ZTXIGEwp43CbVim96ga0UB3shKtUhIJs" alt="Paso 1" loading="lazy"><figcaption><b>1. Calienta</b><span>Funde el cacao en un cazo a fuego lento.</span></figcaption></figure>
+      <figure><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/1747949637317_image___2025_01_24T010951.713_11zon.webp?versionId=Ooie2k2_TOfSuuesXs.PqwJU4uozgWgR" alt="Paso 2" loading="lazy"><figcaption><b>2. Añade leche</b><span>Vierte 100 ml de leche caliente o bebida vegetal.</span></figcaption></figure>
+      <figure><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/1747949640110_image___2025_01_24T011043.068_11zon.webp?versionId=VFR6C6EHqFlJ.wfvniY3zzhhhqltyUFw" alt="Paso 3" loading="lazy"><figcaption><b>3. Endulza (opcional)</b><span>Añade 1 cucharadita de miel o tu endulzante preferido.</span></figcaption></figure>
+      <figure><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/1747949643183_image___2025_01_24T011140.089_11zon.webp?versionId=axraJ0gayrZAyURsEZzks9hOEgg.YD9y" alt="Paso 4" loading="lazy"><figcaption><b>4. Remueve y disfruta</b><span>Remueve bien, ajusta la textura y cuida tu circulación.</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARATIVA ================= -->
+<section>
+  <div class="container">
+    <span class="eyebrow">Comparativa</span>
+    <h2>¿Por qué elegir el Cacao Ceremonial MAÏA?</h2>
+    <p class="lead">Compara MAÏA con las alternativas más populares para la circulación.</p>
+    <div class="table-wrap">
+      <table class="cmp">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="us"><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/b1_00d39694.png?versionId=KuLe8BVth2EHEx58Llo23o8UB_9aztHN" alt="" loading="lazy">MAÏA Super Cacao</th>
+            <th><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/comp-beetroot_2cad25be.png?versionId=DHxeu06HnXMwiArVyPwwTN6dyIBo_cDY" alt="" loading="lazy">Remolacha en polvo</th>
+            <th><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/comp-pomegranate_dce09ce1.png?versionId=F1v_Hf.M_R8Zr2DQQyi.XyGYomI6Mrxz" alt="" loading="lazy">Zumo de granada</th>
+            <th><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/comp-coq10_45f9d24b.png?versionId=TqnKBf.m8CF5YGLA0fBDSwGBPoq676Qh" alt="" loading="lazy">Cápsulas CoQ10</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Máxima potencia de flavanoles</td><td class="us yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>Apoyo a la circulación</td><td class="us yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
+          <tr><td>Sin picos de azúcar en sangre</td><td class="us yes">✓</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td></tr>
+          <tr><td>Alivio del estrés y mejor humor</td><td class="us yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>Sin azúcar añadido</td><td class="us yes">✓</td><td class="yes">✓</td><td class="no">✕</td><td class="yes">✓</td></tr>
+          <tr><td>Energía natural sostenida</td><td class="us yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>100% vegetal y de origen ético</td><td class="us yes">✓</td><td class="yes">✓</td><td class="yes">✓</td><td class="no">✕</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="btn-wrap"><a class="btn cta" href="#">Reclamar mi oferta limitada →</a></div>
+  </div>
+</section>
+
+<!-- ================= DOS MUNDOS ================= -->
+<section class="alt">
+  <div class="container">
+    <span class="eyebrow">Ciencia + tradición</span>
+    <h2>Validado por dos mundos</h2>
+    <div class="worlds" style="margin-top:2rem">
+      <div class="world">
+        <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/validated-science-5Pc2ZQrqqKBjsX93cLzMUa.webp?versionId=CfVnLBFifgvw8tZzEK1Z17Qi8hcL34eI" alt="Validación científica" loading="lazy">
+        <div class="in"><h3>Validación científica moderna</h3><ul>
+          <li>25+ estudios revisados por pares sobre los flavanoles del cacao</li>
+          <li>Ensayos clínicos sobre la salud cardiovascular a largo plazo</li>
+          <li>Investigación de instituciones cardiovasculares de referencia</li>
+          <li>Efectos documentados sobre la producción de óxido nítrico</li>
+          <li>Estudios sobre beneficios cardiovasculares a largo plazo</li>
+        </ul></div>
+      </div>
+      <div class="world">
+        <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/validated-traditional-9GjEwhBwHdW4dFmagwZdxZ.webp?versionId=kw3VoBLhdsAWCQDbwgOes_CS8ZItOxhX" alt="Sabiduría tradicional" loading="lazy">
+        <div class="in"><h3>Sabiduría tradicional</h3><ul>
+          <li>Siglos de uso por sanadores indígenas</li>
+          <li>Métodos de preparación sagrados que conservan los compuestos activos</li>
+          <li>Rituales tradicionales de limpieza y bendición</li>
+          <li>Conocimiento ancestral sobre sus propiedades para el corazón</li>
+          <li>Protocolos ceremoniales probados por el tiempo</li>
+        </ul></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESCASEZ ================= -->
+<section>
+  <div class="container split">
+    <div class="media"><img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/scarcity-farm-harvest-LkkAXJ8zycB3nQduACvH8Q.webp?versionId=rSc5HEaxjFolzpmqTD2L.SfkA7G99Z8F" alt="Cosecha de cacao" loading="lazy"></div>
+    <div>
+      <span class="eyebrow" style="text-align:left">Existencias limitadas</span>
+      <h2>Nuestro cacao procede de una única finca rica en flavanoles… y casi se ha agotado.</h2>
+      <p>A diferencia de los cacaos en polvo producidos en masa, MAÏA Super Cacao procede de una única finca de gran altitud en Perú, con cosechas estacionales limitadas. Cada lote se analiza para garantizar la máxima potencia de flavanoles.</p>
+      <p>Cuando este lote se agote, la próxima reposición no llegará hasta dentro de varias semanas. Mantenemos una producción intencionadamente pequeña para conservar la potencia que hace funcionar esta fórmula.</p>
+      <div class="stock" style="margin-top:1rem">
+        <div class="bar"><span></span></div>
+        <div class="stock-row"><span>2.400+ unidades vendidas este mes</span><span class="so">Solo queda el 16% del lote</span></div>
+      </div>
+      <a class="btn cta" href="#">Asegurar el mío ahora →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= GARANTÍA ================= -->
+<section class="alt">
+  <div class="container">
+    <div class="guarantee">
+      <img src="https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/guarantee-badge-imstJoaRShMnfPb8TuRc5u.webp?versionId=mBGMSz7acO6iTgdtjeMOkCJ8KAVHzMq9" alt="Garantía de devolución 30 días" loading="lazy">
+      <div>
+        <h2>Garantía de devolución de 30 días · Envío gratis</h2>
+        <p>Confiamos tanto en nuestra fórmula que ofrecemos una garantía completa de devolución de 30 días. Si no quedas totalmente satisfecho con los resultados, contáctanos y te reembolsamos el importe íntegro, sin preguntas.</p>
+        <div class="pills"><span>Sin preguntas</span><span>Reembolso completo garantizado</span><span>Compra sin riesgo</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section>
+  <div class="container">
+    <span class="eyebrow">Resolvemos tus dudas</span>
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq" style="margin-top:2rem">
+      <div class="acc">
+        <details><summary>¿En qué se diferencia MAÏA del cacao normal o del chocolate negro?</summary><div class="body">A diferencia del cacao en polvo común o del chocolate negro, MAÏA utiliza granos de cacao criollo ultra-raros, la variedad más apreciada del mundo. Nuestro proceso propio a baja temperatura conserva todo el espectro de flavanoles que el procesado convencional destruye. Además, no añadimos azúcar ni aditivos.</div></details>
+        <details><summary>¿Cómo apoya el flujo sanguíneo?</summary><div class="body">Los flavanoles del cacao ayudan a mantener la elasticidad de los vasos sanguíneos, lo que contribuye a un flujo sanguíneo normal. También favorecen la producción natural de óxido nítrico, que ayuda a relajar los vasos sanguíneos.*</div></details>
+        <details><summary>¿Cuánto tarda en notarse?</summary><div class="body">Muchos usuarios notan más energía y claridad mental en las primeras horas tras su primera taza. Para beneficios relacionados con la circulación, la mayoría nota cambios tras 2-4 semanas de uso diario. Los beneficios completos suelen apreciarse a los 2-3 meses.*</div></details>
+        <details><summary>¿Es seguro si tomo medicación?</summary><div class="body">Si tomas medicación para la tensión arterial o anticoagulantes, te recomendamos consultar con tu médico antes de empezar cualquier complemento nuevo, incluido MAÏA (la nattokinasa puede interactuar con anticoagulantes).</div></details>
+        <details><summary>¿A qué sabe?</summary><div class="body">MAÏA tiene un sabor a chocolate rico y profundo con sutiles notas terrosas, como el mejor cacao ceremonial. Es naturalmente amargo-dulce, sin azúcar añadido.</div></details>
+        <details><summary>¿Cómo se prepara?</summary><div class="body">Mezcla una cucharada con 240 ml de agua caliente o tu leche favorita. Remueve durante 30 segundos y ¡disfruta!</div></details>
+        <details><summary>¿Contiene cafeína?</summary><div class="body">MAÏA contiene teobromina, un compuesto natural emparentado con la cafeína pero de efecto más suave y duradero. Cada ración contiene aproximadamente 20 mg de cafeína de origen natural.</div></details>
+        <details><summary>¿Y si no me gusta?</summary><div class="body">Ofrecemos una garantía completa de devolución de 30 días. Si no estás satisfecho por cualquier motivo, contáctanos y te devolvemos el importe íntegro, sin preguntas.</div></details>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL ================= -->
+<section class="final" style="background-image:url('https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/bottom-banner-lifestyle-EMLUCkkGXbHNciH4ADSmCQ.webp?versionId=QSBnMXv1qyhAR2SSNwU4RohWKuTAGa2v')">
+  <div class="container">
+    <span class="eyebrow">Nuestra historia</span>
+    <h2>De la ceremonia ancestral a tu ritual matutino</h2>
+    <p>MAÏA nació de un profundo respeto por esta tradición y del compromiso de hacerla accesible. Trabajamos directamente con agricultores indígenas que cultivan cacao criollo ultra-raro con métodos ancestrales, para que cada bolsa ofrezca todo el espectro de compuestos que la naturaleza creó para tu circulación.</p>
+    <div class="btn-wrap"><a class="btn cta" href="#">Empieza hoy tu ritual →</a></div>
+    <p class="trustline">Garantía de devolución de 30 días · Envío gratis · Pago seguro</p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <p class="disc"><strong>Aviso:</strong> Los resultados pueden variar de una persona a otra. *Los flavanoles del cacao ayudan a mantener la elasticidad de los vasos sanguíneos, lo que contribuye a un flujo sanguíneo normal; el efecto beneficioso se obtiene con una ingesta diaria de 200 mg de flavanoles de cacao, dentro de una dieta variada y equilibrada y un estilo de vida saludable. Los complementos alimenticios no deben utilizarse como sustituto de una dieta equilibrada. Este producto no está destinado a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Consulta con tu profesional sanitario antes de tomar complementos, especialmente si estás embarazada, en periodo de lactancia o tomas medicación. Esta información no constituye consejo médico.</p>
+    <nav>
+      <a href="#">Política de privacidad</a><a href="#">Política de reembolso</a><a href="#">Términos del servicio</a><a href="#">Contacto</a><a href="#">Política de envíos</a>
+    </nav>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a class="btn cta" href="#">Añadir al carrito – Oferta limitada</a></div>
+
+<script>
+/* ================== CONFIGURACIÓN ==================
+   CHECKOUT_URL: enlace por defecto de todos los botones de compra.
+   PACKS: edita nombres, precios (texto libre) y el enlace de cada pack.
+   ==================================================== */
+const CHECKOUT_URL = "#";
+const PACKS = [
+  { id:"1", name:"1 bolsa",  desc:"30 raciones",                        price:"39,95 €", old:"59,95 €", url:CHECKOUT_URL },
+  { id:"2", name:"2 bolsas", desc:"60 raciones · Ahorra 35%",           price:"69,95 €", old:"119,90 €", url:CHECKOUT_URL, tag:"Más popular" },
+  { id:"3", name:"3 bolsas", desc:"90 raciones · Ahorra 45% + 3 regalos", price:"89,95 €", old:"179,85 €", url:CHECKOUT_URL, tag:"Mejor valor" }
+];
+const DEFAULT_PACK = "2";
+
+/* --- Selector de packs --- */
+(function(){
+  const wrap = document.getElementById("packs");
+  const buy = document.getElementById("buyBtn");
+  let current = DEFAULT_PACK;
+  function render(){
+    wrap.innerHTML = PACKS.map(p => `
+      <label class="pack${p.id===current?" selected":""}">
+        ${p.tag?`<span class="tag">${p.tag}</span>`:""}
+        <input type="radio" name="pack" value="${p.id}"${p.id===current?" checked":""}>
+        <div><div class="name">${p.name}</div><div class="desc">${p.desc}</div></div>
+        <div class="price"><s>${p.old}</s>${p.price}</div>
+      </label>`).join("");
+    const sel = PACKS.find(p => p.id===current);
+    const url = sel ? sel.url : CHECKOUT_URL;
+    buy.href = url;
+    document.querySelectorAll("a.cta").forEach(a => a.href = url);
+  }
+  wrap.addEventListener("change", e => { if(e.target.name==="pack"){ current=e.target.value; render(); } });
+  render();
+})();
+
+/* --- Galería --- */
+document.getElementById("thumbs").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  document.getElementById("mainImg").src = b.dataset.src;
+  document.querySelectorAll("#thumbs button").forEach(x => x.classList.toggle("active", x===b));
+});
+
+/* --- Cuenta atrás (3 h, se reinicia por visitante) --- */
+(function(){
+  const KEY="maia_es_deadline", DUR=3*60*60*1000;
+  let end;
+  try{ end = parseInt(localStorage.getItem(KEY),10); }catch(e){}
+  if(!end || end < Date.now()){ end = Date.now()+DUR; try{ localStorage.setItem(KEY,end); }catch(e){} }
+  const el = document.getElementById("countdown");
+  const pad = n => String(n).padStart(2,"0");
+  function tick(){
+    let ms = Math.max(0, end-Date.now());
+    const h=Math.floor(ms/36e5), m=Math.floor(ms%36e5/6e4), s=Math.floor(ms%6e4/1e3);
+    el.textContent = `${pad(h)} H : ${pad(m)} MIN : ${pad(s)} S`;
+  }
+  tick(); setInterval(tick,1000);
+})();
+
+/* --- Fecha de entrega estimada (+3 días hábiles) --- */
+(function(){
+  const d = new Date(); let added = 0;
+  while(added < 3){ d.setDate(d.getDate()+1); const w=d.getDay(); if(w!==0 && w!==6) added++; }
+  document.getElementById("deliveryDate").textContent =
+    d.toLocaleDateString("es-ES",{weekday:"long", day:"numeric", month:"long"}).toUpperCase();
+})();
+</script>
+</body>
+</html>
