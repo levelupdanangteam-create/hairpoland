@@ -91,6 +91,22 @@ header.site img{height:38px;width:auto}
 .auto{font-size:.8rem;text-align:center;color:var(--green);font-weight:600;margin-bottom:.8rem}
 .ship{text-align:center;font-size:.85rem;color:var(--muted);margin-top:.8rem}
 .ship b{color:var(--brown-900)}
+/* Galería: flechas */
+.gallery-main{position:relative}
+.gnav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:10px;border:0;background:rgba(43,21,12,.75);color:#fff;font-size:1.4rem;cursor:pointer;display:grid;place-items:center}
+.gnav.prev{left:10px}.gnav.next{right:10px}
+.thumbs{grid-template-columns:repeat(7,1fr)!important}
+/* Vídeos de clientes */
+.vids-title{font-family:Inter,sans-serif;font-size:1.1rem;font-weight:700;color:var(--brown-900);margin:1.6rem 0 .8rem}
+.vids{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.vid{position:relative;flex:0 0 130px;aspect-ratio:9/14.5;border-radius:10px;overflow:hidden;background:var(--brown-800);border:0;padding:0;cursor:pointer;scroll-snap-align:start}
+.vid img,.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vid .play{position:absolute;left:12px;bottom:12px;width:32px;height:32px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.vid .play::after{content:"";border-left:10px solid var(--brown-900);border-top:6px solid transparent;border-bottom:6px solid transparent;margin-left:3px}
+.vmodal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:100;padding:16px}
+.vmodal.open{display:flex}
+.vmodal video{max-height:88vh;max-width:100%;border-radius:12px;background:#000}
+.vmodal .x{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:2rem;cursor:pointer}
 .guarantee-mini{display:flex;gap:14px;align-items:center;background:#fff;border:1px dashed var(--gold);border-radius:12px;padding:14px;margin-top:1rem}
 .guarantee-mini img{width:64px;flex:0 0 64px}
 .guarantee-mini h3{font-size:1.05rem;margin-bottom:2px}
@@ -269,13 +285,15 @@ footer nav a:hover{color:#fff}
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <div class="gallery-main"><img id="mainImg" src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775161083177_Screenshot2fdtr026_03_08at4.44.55AM_1bbb509dsd.webp" alt="Cliente disfrutando MAÏA Cacao Ceremonial"></div>
+      <div class="gallery-main"><img id="mainImg" src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775161083177_Screenshot2fdtr026_03_08at4.44.55AM_1bbb509dsd.webp" alt="Cliente disfrutando MAÏA Cacao Ceremonial"><button class="gnav prev" aria-label="Anterior">‹</button><button class="gnav next" aria-label="Siguiente">›</button></div>
       <div class="thumbs" id="thumbs">
         <button class="active" data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775161083177_Screenshot2fdtr026_03_08at4.44.55AM_1bbb509dsd.webp"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775161083177_Screenshot2fdtr026_03_08at4.44.55AM_1bbb509dsd.webp" alt="Estilo de vida"></button>
         <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775158433213_carousel_benefits_v4_2547d3a3_11zon.webp"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775158433213_carousel_benefits_v4_2547d3a3_11zon.webp" alt="Beneficios"></button>
         <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793660070340_openart_gpt_image_2_edit_1_1793658040645_e6ff1c02_1_1_.png"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793660070340_openart_gpt_image_2_edit_1_1793658040645_e6ff1c02_1_1_.png" alt="Ciencia"></button>
         <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793533558761_openart_gpt_image_2_edit_1_1793495303652_e8e76aba_1_.png"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793533558761_openart_gpt_image_2_edit_1_1793495303652_e8e76aba_1_.png" alt="Modo de uso"></button>
         <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775160969900_carousel_trust_v3_4e8ec609_11zon.webp"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1775160969900_carousel_trust_v3_4e8ec609_11zon.webp" alt="Confianza"></button>
+        <button data-src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793533648177_openart_gpt_image_2_edit_1_1793495412970_11a9133d_1_.png"><img src="https://assets.imagehub.io/da3df349-b35e-4587-8e42-5e2391c6486e/1793533648177_openart_gpt_image_2_edit_1_1793495412970_11a9133d_1_.png" alt="Comparación de cacao"></button>
+        <button data-src="https://assets.imagehub.io/07074b47-ef34-4be5-8157-472fcf7e8f69/1753988427951_labtested.png"><img src="https://assets.imagehub.io/07074b47-ef34-4be5-8157-472fcf7e8f69/1753988427951_labtested.png" alt="Analizado en laboratorio"></button>
       </div>
     </div>
 
@@ -343,6 +361,9 @@ footer nav a:hover{color:#fff}
           <div class="body">Cada ración (6,7 g) contiene: 25 kcal, 1,5 g de grasa, 3 g de hidratos de carbono, 1 g de fibra, 0 g de azúcar, 1 g de proteína. Además de todo el espectro de flavanoles, teobromina, magnesio y el complejo de polifenoles ceremonial.</div>
         </details>
       </div>
+
+      <h3 class="vids-title">Lo que dicen nuestros clientes felices</h3>
+      <div class="vids" id="vids"></div>
     </div>
   </div>
 </section>
@@ -673,6 +694,8 @@ footer nav a:hover{color:#fff}
   </div>
 </footer>
 
+<div class="vmodal" id="vmodal"><button class="x" aria-label="Cerrar">×</button><video id="vplayer" controls playsinline></video></div>
+
 <div class="sticky-cta"><a class="btn cta" href="#">Añadir al carrito – Oferta limitada</a></div>
 
 <script>
@@ -687,6 +710,37 @@ const PACKS = [
   { id:"3", name:"3 bolsas", desc:"90 raciones · Ahorra 45% + 3 regalos", price:"89,95 €", old:"179,85 €", url:CHECKOUT_URL, tag:"Mejor valor" }
 ];
 const DEFAULT_PACK = "2";
+
+/* VÍDEOS DE CLIENTES (UGC)
+   src    = enlace directo al .mp4 (súbelo a Hostinger, p. ej. /cacao/video/cliente1.mp4)
+   poster = imagen de portada (si se deja vacío, se usa el primer fotograma del vídeo)
+   Añade o quita tantos objetos como quieras. */
+const VIDEOS = [
+  { src:"", poster:"https://assets.imagehub.io/Funnel/assets/images/a59303bf-6759-48da-946b-28c7198a188f/680f5580-e766-4afb-9621-6996c4270d1f/mask_group_85.webp?versionId=9yXsfUiq7ja6bw0r9yRXNCKdbw7SMw.p" },
+  { src:"", poster:"" },
+  { src:"", poster:"" },
+  { src:"", poster:"" },
+  { src:"", poster:"" },
+  { src:"", poster:"" }
+];
+
+/* --- Tira de vídeos + ventana emergente --- */
+(function(){
+  const wrap=document.getElementById("vids"), modal=document.getElementById("vmodal"), player=document.getElementById("vplayer");
+  const list=VIDEOS.filter(v=>v.src||v.poster);
+  if(!list.length){ wrap.previousElementSibling.remove(); wrap.remove(); return; }
+  wrap.innerHTML=list.map((v,i)=>`<button class="vid" data-i="${i}" aria-label="Ver vídeo ${i+1}">${
+    v.poster?`<img src="${v.poster}" alt="" loading="lazy">`:`<video src="${v.src}#t=0.5" muted playsinline preload="metadata"></video>`
+  }<span class="play"></span></button>`).join("");
+  wrap.addEventListener("click",e=>{
+    const b=e.target.closest(".vid"); if(!b) return;
+    const v=list[b.dataset.i]; if(!v.src) return;
+    player.src=v.src; modal.classList.add("open"); player.play().catch(()=>{});
+  });
+  function close(){ player.pause(); player.removeAttribute("src"); player.load(); modal.classList.remove("open"); }
+  modal.addEventListener("click",e=>{ if(e.target===modal||e.target.classList.contains("x")) close(); });
+  document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&modal.classList.contains("open")) close(); });
+})();
 
 /* --- Selector de packs --- */
 (function(){
@@ -711,11 +765,14 @@ const DEFAULT_PACK = "2";
 })();
 
 /* --- Galería --- */
-document.getElementById("thumbs").addEventListener("click", e => {
-  const b = e.target.closest("button"); if(!b) return;
-  document.getElementById("mainImg").src = b.dataset.src;
-  document.querySelectorAll("#thumbs button").forEach(x => x.classList.toggle("active", x===b));
-});
+(function(){
+  const btns=[...document.querySelectorAll("#thumbs button")], main=document.getElementById("mainImg");
+  let idx=0;
+  function show(i){ idx=(i+btns.length)%btns.length; main.src=btns[idx].dataset.src; btns.forEach((x,j)=>x.classList.toggle("active",j===idx)); }
+  document.getElementById("thumbs").addEventListener("click",e=>{ const b=e.target.closest("button"); if(b) show(btns.indexOf(b)); });
+  document.querySelector(".gnav.prev").addEventListener("click",()=>show(idx-1));
+  document.querySelector(".gnav.next").addEventListener("click",()=>show(idx+1));
+})();
 
 /* --- Cuenta atrás (3 h, se reinicia por visitante) --- */
 (function(){
